@@ -10,7 +10,6 @@
 <header class="header">
     <div class="header-content">
         <div class="header-title-container">
-            <h7 class="h1">Товары</h7>
             <h1 class="h1">Товары и точка</h1>
         </div>
         <div class="search-container">
@@ -23,6 +22,337 @@
     </div>
 </header>
 <main class="main">
+    <div class="main-content">
+        <div class="basket-container">
+            <h3 class="text-basket">Корзина</h3>
+            <div class="product-delivery-section">
+                <div class="in-stock-container">
+                    <div class="accordion-header">
+                        <div class="pick-all-checkbox-container">
+                            <input type="checkbox" class="checkbox" id="chooseAllCheckbox">
+                            <label for="chooseAllCheckbox" class="custom-checkbox"></label>
+                            <span>Выбрать все</span>
+                        </div>
+                        <!--                        <button>-->
+                        <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
+                        <!--                        </button>-->
+                    </div>
+                    <ul class="cards-container">
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" class="checkbox" id="card-checkbox-1">
+                                        <label for="card-checkbox-1" class="custom-checkbox"></label>
+                                    </div>
+                                    <img class="product-photo" src="assets/images/card-photo-2.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button disabled class="count-button">-</button>
+                                        <input id="goods-count-1" class="input-count-screen"/>
+                                        <label for="goods-count-1" class="custom-input-count-screen">1</label>
+                                        <button class="count-button">+</button>
+                                    </div>
+                                    <span class="products-left-text">Осталось 2.</span>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" class="checkbox" id="card-checkbox-2">
+                                        <label for="card-checkbox-2" class="custom-checkbox"></label>
+                                    </div>
+                                    <img class="product-photo" src="assets/images/card-photo-1.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button class="count-button">-</button>
+                                        <input id="goods-count-2" class="input-count-screen"/>
+                                        <label for="goods-count-2" class="custom-input-count-screen">200</label>
+                                        <button class="count-button">+</button>
+                                    </div>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <div class="checkbox-container">
+                                        <input type="checkbox" class="checkbox" id="card-checkbox-3">
+                                        <label for="card-checkbox-3" class="custom-checkbox"></label>
+                                    </div>
+                                    <img class="product-photo" src="assets/images/card-photo-3.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button class="count-button">-</button>
+                                        <input id="goods-count-3" class="input-count-screen"/>
+                                        <label for="goods-count-3" class="custom-input-count-screen">2</label>
+                                        <button disabled class="count-button">+</button>
+                                    </div>
+                                    <span class="products-left-text">Осталось 2.</span>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="out-of-stock-container">
+                    <div class="accordion-header">
+                        <span>Отсутствуют · 3 товара</span>
+                        <!--                        <button>-->
+                        <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
+                        <!--                        </button>-->
+                    </div>
+                    <ul class="not-available-cards-container">
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <img class="product-photo" src="assets/images/card-photo-2.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button disabled class="count-button">-</button>
+                                        <input id="goods-count-4" class="input-count-screen"/>
+                                        <label for="goods-count-4" class="custom-input-count-screen">1</label>
+                                        <button class="count-button">+</button>
+                                    </div>
+                                    <span class="products-left-text">Осталось 2.</span>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <img class="product-photo" src="assets/images/card-photo-1.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button class="count-button">-</button>
+                                        <input id="goods-count-5" class="input-count-screen"/>
+                                        <label for="goods-count-5" class="custom-input-count-screen">200</label>
+                                        <button class="count-button">+</button>
+                                    </div>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="card">
+                            <div class="product-info-container">
+                                <div class="photo-and-checkbox">
+                                    <img class="product-photo" src="assets/images/card-photo-3.png"
+                                         alt="product-photo"/>
+                                </div>
+                                <div class="product-text-info">
+                                    <span>Футболка UZcotton мужская</span>
+                                    <div class="color-size-container">
+                                        <span>Цвет белый</span>
+                                        <span>Размер: 56</span>
+                                    </div>
+                                    <div class="address-container">
+                                        <span>Каледино WB</span>
+                                        <span>OOO Вайлдберриз</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="count-and-price-container">
+                                <div class="quantity-goods-container">
+                                    <div class="counter">
+                                        <button class="count-button">-</button>
+                                        <input id="goods-count-6" class="input-count-screen"/>
+                                        <label for="goods-count-6" class="custom-input-count-screen">2</label>
+                                        <button disabled class="count-button">+</button>
+                                    </div>
+                                    <span class="products-left-text">Осталось 2.</span>
+                                    <div class="buttons-container">
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        <!--                                        </button>-->
+                                        <!--                                        <button class="count-button">-->
+                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
+                                        <!--                                        </button>-->
+                                    </div>
+                                </div>
+                                <div class="total-price-container">
+                                    <div class="price">
+                                        <span>522</span>
+                                        <span>com</span>
+                                    </div>
+                                    <span class="discount">1051 сом</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="order-placement-container">
+                    <div class="delivery-container">
+                        delivery-container
+                    </div>
+                    <div class="payment-container">
+                        payment
+                    </div>
+                    <div class="receiver-container">
+                        payment
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="total-container">
+            total
+        </div>
+    </div>
 </main>
 <footer class="footer">
     <div class="footer-content">
