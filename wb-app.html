@@ -10,32 +10,45 @@
 <header class="header">
     <div class="header-content">
         <div class="header-title-container">
-            <h1 class="h1">Товары и точка</h1>
+            <button class="header-burger-button">
+                <img class="header-burger-button-icon" src="assets/icons/burger-icon.svg" alt="burger-icon"/>
+            </button>
+            <a class="brand-name">Товары и точка</a>
         </div>
-        <div class="search-container">
-            <input/>
+        <div class="header-search-container">
+            <label for="header-input" class="header-search-input-label">
+                <input id="header-input" class="header-search-input" placeholder="Я ищу..."/>
+            </label>
+            <img src="assets/icons/search.svg" alt="search-icon"/>
         </div>
-        <div class="icon-buttons-container">
-            <span>My prof</span>
-            <span>basket</span>
+        <div class="header-icon-buttons-container">
+            <div class="header-profile-icon-container">
+                <img src="assets/icons/profile-icon.svg" alt="profile-icon"/>
+                <span class="header-profile-text">Профиль</span>
+            </div>
+            <div class="header-basket-icon-container">
+                <img src="assets/icons/basket-icon.svg" alt="profile-icon"/>
+                <span class="header-basket-text">Корзина</span>
+            </div>
+
         </div>
     </div>
 </header>
 <main class="main">
     <div class="main-content">
-        <div class="basket-container">
-            <h3 class="text-basket">Корзина</h3>
+        <div class="main-basket-container">
+            <h1 class="main-basket-text">Корзина</h1>
             <div class="product-delivery-section">
                 <div class="in-stock-container">
                     <div class="accordion-header">
                         <div class="pick-all-checkbox-container">
-                            <input type="checkbox" class="checkbox" id="chooseAllCheckbox">
-                            <label for="chooseAllCheckbox" class="custom-checkbox"></label>
-                            <span>Выбрать все</span>
+                            <input type="checkbox" class="checkbox" id="choose-all-checkbox">
+                            <label for="choose-all-checkbox" class="custom-checkbox-label"></label>
+                            <span class="choose-all-checkbox-text">Выбрать все</span>
                         </div>
-                        <!--                        <button>-->
-                        <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
-                        <!--                        </button>-->
+                        <button class="accordion-arrow-button">
+                            <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
+                        </button>
                     </div>
                     <ul class="cards-container">
                         <li class="card">
@@ -49,14 +62,14 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
+                                    <span class="product-name-text">Футболка UZcotton мужская</span>
                                     <div class="color-size-container">
-                                        <span>Цвет белый</span>
-                                        <span>Размер: 56</span>
+                                        <span class="product-color-text">Цвет белый</span>
+                                        <span class="product-size-text">Размер: 56</span>
                                     </div>
                                     <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text">Каледино WB</span>
+                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -71,20 +84,20 @@
                                     </div>
                                     <span class="products-left-text">Осталось 2.</span>
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg" alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="total-price-container">
                                     <div class="price">
-                                        <span>522</span>
-                                        <span>com</span>
+                                        <span class="total-price-number">522</span>
+                                        <span class="total-price-currency">com</span>
                                     </div>
-                                    <span class="discount">1051 сом</span>
+                                    <span class="total-price-discount-number">1051 сом</span>
                                 </div>
                             </div>
                         </li>
@@ -99,14 +112,13 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
+                                    <span class="product-name-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
                                     <div class="color-size-container">
-                                        <span>Цвет белый</span>
-                                        <span>Размер: 56</span>
+                                        <span class="product-color-text">Цвет: прозрачный</span>
                                     </div>
                                     <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text">Каледино WB</span>
+                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -120,20 +132,20 @@
                                         <button class="count-button">+</button>
                                     </div>
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg" alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="total-price-container">
                                     <div class="price">
-                                        <span>522</span>
-                                        <span>com</span>
+                                        <span class="total-price-big-number">2 100 047</span>
+                                        <span class="total-price-currency">com</span>
                                     </div>
-                                    <span class="discount">1051 сом</span>
+                                    <span class="total-price-discount-number">2 300 047 сом</span>
                                 </div>
                             </div>
                         </li>
@@ -148,14 +160,10 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
-                                    <div class="color-size-container">
-                                        <span>Цвет белый</span>
-                                        <span>Размер: 56</span>
-                                    </div>
+                                    <span class="product-name-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell </span>
                                     <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text">Каледино WB</span>
+                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -170,20 +178,20 @@
                                     </div>
                                     <span class="products-left-text">Осталось 2.</span>
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg " alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
                                 <div class="total-price-container">
                                     <div class="price">
-                                        <span>522</span>
-                                        <span>com</span>
+                                        <span class="total-price-number">494</span>
+                                        <span class="total-price-currency">com</span>
                                     </div>
-                                    <span class="discount">1051 сом</span>
+                                    <span class="total-price-discount-number">905 сом</span>
                                 </div>
                             </div>
                         </li>
@@ -191,10 +199,10 @@
                 </div>
                 <div class="out-of-stock-container">
                     <div class="accordion-header">
-                        <span>Отсутствуют · 3 товара</span>
-                        <!--                        <button>-->
-                        <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
-                        <!--                        </button>-->
+                        <span class="out-of-stock-text">Отсутствуют · 3 товара</span>
+                        <button>
+                            <img src="assets/icons/accordion-arrow.svg" alt="accordion-arrow"/>
+                        </button>
                     </div>
                     <ul class="not-available-cards-container">
                         <li class="card">
@@ -204,14 +212,10 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
+                                    <span class="product-name-text">Футболка UZcotton мужская</span>
                                     <div class="color-size-container">
-                                        <span>Цвет белый</span>
-                                        <span>Размер: 56</span>
-                                    </div>
-                                    <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
+                                        <span class="product-color-text">Цвет белый</span>
+                                        <span class="product-size-text">Размер: 56</span>
                                     </div>
                                 </div>
                             </div>
@@ -219,12 +223,12 @@
                             <div class="count-and-price-container">
                                 <div class="quantity-goods-container">
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg" alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -237,14 +241,10 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
+                                    <span class="product-name-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
                                     <div class="color-size-container">
                                         <span>Цвет белый</span>
                                         <span>Размер: 56</span>
-                                    </div>
-                                    <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -253,12 +253,12 @@
                                 <div class="quantity-goods-container">
 
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg" alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -271,27 +271,19 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span>Футболка UZcotton мужская</span>
-                                    <div class="color-size-container">
-                                        <span>Цвет белый</span>
-                                        <span>Размер: 56</span>
-                                    </div>
-                                    <div class="address-container">
-                                        <span>Каледино WB</span>
-                                        <span>OOO Вайлдберриз</span>
-                                    </div>
+                                    <span class="product-name-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell </span>
                                 </div>
                             </div>
 
                             <div class="count-and-price-container">
                                 <div class="quantity-goods-container">
                                     <div class="buttons-container">
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/like-icon.svg" alt="like-icon"/>
-                                        <!--                                        </button>-->
-                                        <!--                                        <button class="count-button">-->
-                                        <img src="assets/icons/basket-icon.svg" alt="basket-icon"/>
-                                        <!--                                        </button>-->
+                                        <button class="count-button">
+                                            <img src="assets/icons/like-icon.svg" alt="like-icon"/>
+                                        </button>
+                                        <button class="count-button">
+                                            <img src="assets/icons/trash-icon.svg" alt="basket-icon"/>
+                                        </button>
                                     </div>
                                 </div>
 
@@ -309,30 +301,31 @@
                             <div class="delivery-method-main">
                                 <div class="delivery-method-info">
                                     <div class="delivery-pick-up-point">
-                                        <span class="delivery-pick-up-point">Пункт выдачи</span>
+                                        <span class="delivery-pick-up-date-point-text">Пункт выдачи</span>
                                     </div>
                                     <div class="delivery-cost">
-                                        <span class="delivery-pick-up-point">Стоимость доставки</span>
+                                        <span class="delivery-pick-up-date-point-text">Стоимость доставки</span>
                                     </div>
                                     <div class="delivery-date">
-                                        <span class="delivery-pick-up-point">5—6 февраля</span>
+                                        <span class="delivery-pick-up-date-point-text">5—6 февраля</span>
                                     </div>
                                     <div class="delivery-date">
-                                        <span class="delivery-pick-up-point">7—8 февраля</span>
+                                        <span class="delivery-pick-up-date-point-text">7—8 февраля</span>
                                     </div>
                                 </div>
                                 <div class="delivery-method-info-expanded">
                                     <div class="delivery-pick-up-point-expanded">
-                                        <span>Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                                        <span class="delivery-pick-up-date-point-expanded-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                                         <div class="delivery-pick-up-point-rating-container">
                                             <div class="delivery-pick-up-point-rating-stars">
                                                 <img src="assets/icons/rating-star.svg" alt="rating-star"/>
-                                                <span>4.99</span>
+                                                <span class="delivery-pick-up-point-rating-text">4.99</span>
                                             </div>
+                                            <span class="delivery-pick-up-point-rating-text">Ежедневно с 10 до 21</span>
                                         </div>
                                     </div>
                                     <div class="delivery-cost-expanded">
-                                        <span>Бесплатно</span>
+                                        <span class="delivery-cost-expanded-text">Бесплатно</span>
                                     </div>
                                     <div class="delivery-date-expanded">
                                         <div class="delivery-goods-images-container">
@@ -356,7 +349,9 @@
                         <div class="delivery-method-footer">
                             <div class="delivery-method-footer-info-container">
                                 <img src="./assets/icons/price-shipping-green.svg" alt="price-shipping-icon"/>
-                                <span> Обратная доставка товаров нa склад при отказе—</span>
+                                <span class="return-delivery-text">Обратная доставка товаров нa склад при отказе—
+                                    <span class="return-delivery-text-green">бесплатно</span>
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -364,7 +359,7 @@
                         <div class="payment-method-container">
                             <div class="payment-method-header">
                                 <div class="payment-method-header-text-container">
-                                    <span>Способ оплаты</span>
+                                    <span class="payment-method-header-text">Способ оплаты</span>
                                 </div>
                             </div>
                             <div class="payment-method-main">
@@ -374,30 +369,56 @@
                                              src="assets/icons/mir-card.svg"/>
                                     </div>
                                     <div class="payment-method-main-text-container">
-                                        <span>Способ оплаты</span>
+                                        <span class="payment-method-main-text">1234 56•• •••• 1234</span>
+                                        <span class="payment-method-main-text">01/30</span>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="payment-method-footer">
-                            <span>Спишем оплату с карты при получении</span>
+                            <span class="payment-method-footer-text">Спишем оплату с карты при получении</span>
                         </div>
                     </div>
                     <div class="receiver-container">
                         <div class="receiver-header">
                             <div class="receiver-header-text-container">
-                                <span>Получатель</span>
+                                <span class="receiver-method-header-text">Получатель</span>
                             </div>
                         </div>
                         <div class="receiver-inputs-container">
                             <div class="receiver-name-lastname-inputs-container">
-                                <input/>
-                                <input/>
+                                <div>
+                                    <label class="receiver-name-label">
+                                        <input class="receiver-name-input" placeholder="Имя"/>
+                                    </label>
+                                    <span class="receiver-input-error"></span>
+                                </div>
+                                <div>
+                                    <label class="receiver-lastname-label">
+                                        <input class="receiver-lastname-input" placeholder="Фамилия">
+                                    </label>
+                                    <span class="receiver-input-error"></span>
+                                </div>
                             </div>
                             <div class="receiver-email-phone-inputs-container">
-                                <input/>
-                                <input/>
-                                <input/>
+                                <div>
+                                    <label class="receiver-email-label">
+                                        <input class="receiver-email-input" placeholder="Почта"/>
+                                    </label>
+                                    <span class="receiver-input-error"></span>
+                                </div>
+                                <div>
+                                    <label class="receiver-phone-label">
+                                        <input class="receiver-phone-input" placeholder="Телефон"/>
+                                    </label>
+                                    <span class="receiver-input-error"></span>
+                                </div>
+                                <div>
+                                    <label class="receiver-INN-label">
+                                        <input class="receiver-INN-input" placeholder="ИНН"/>
+                                    </label>
+                                    <span class="receiver-input-text">Для таможенного оформления</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -409,22 +430,22 @@
                 <div class="total-info-container">
                     <div class="total-info-price-container">
                         <div class="total-info-price-header">
-                            <span>Итого</span>
-                            <span>2 101 063 сом</span>
+                            <span class="total-info-title-text">Итого</span>
+                            <span class="total-info-price-text">2 101 063 сом</span>
                         </div>
 
                         <div class="total-price-with-delivery-info-container">
                             <div class="total-goods-quantity-text-container">
-                                <span>203 товара</span>
-                                <span>2 302 048 сом</span>
+                                <span class="total-info-text">203 товара</span>
+                                <span class="total-info-text">2 302 048 сом</span>
                             </div>
                             <div class="total-discount-text-container">
-                                <span>Скидка</span>
-                                <span>-209 985 сом</span>
+                                <span class="total-info-text">Скидка</span>
+                                <span class="total-info-text">-209 985 сом</span>
                             </div>
                             <div class="total-delivery-text-container">
-                                <span>Доставка</span>
-                                <span>Бесплатно</span>
+                                <span class="total-info-text">Доставка</span>
+                                <span class="total-info-text">Бесплатно</span>
                             </div>
                         </div>
                     </div>
@@ -438,50 +459,54 @@
                     </div>
                     <div class="total-delivery-point-container">
                         <div class="total-delivery-point-receiver-container">
-                            <span>Доставка в пункт выдачи</span>
-                            <!--                            <button>-->
-                            <img src="assets/icons/change-icon.svg">
-                            <!--                            </button>-->
+                            <span class="total-delivery-point-title-text">Доставка в пункт выдачи</span>
+                            <button>
+                                <img src="assets/icons/change-icon.svg" alt="edit-icon">
+                            </button>
                         </div>
                         <div class="total-delivery-point-address-text-container">
-                            <span>Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                            <span class="total-delivery-point-address-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
                         </div>
                         <div class="total-delivery-date-text-container">
-                            <span>5–8 фев</span>
+                            <span class="total-delivery-date-text">5–8 фев</span>
                         </div>
                     </div>
                     <div class="total-return-delivery-container">
-                        <img src="assets/icons/price-shipping-green.svg">
-                        <span>Обратная доставка товаров насклад при отказе</span>
-                        <div>Бесплатно</div>
+                        <img src="assets/icons/price-shipping-green.svg" alt="price-shipping-icon">
+                        <span class="return-delivery-text">Обратная доставка товаров на склад при отказе —
+                            <span class="return-delivery-text-green">бесплатно</span>
+                        </span>
+
                     </div>
                 </div>
                 <div class="total-pay-card-content">
                     <div class="total-pay-card-header">
                         <div class="total-pay-card-header-container">
-                            <span>Оплата картой</span>
-                            <!--                            <button>-->
-                            <img src="assets/icons/change-icon.svg">
-                            <!--                            </button>-->
+                            <span class="total-pay-title-text">Оплата картой</span>
+                            <button>
+                                <img src="assets/icons/change-icon.svg" alt="change-icon">
+                            </button>
                         </div>
                         <div class="total-pay-card-info-container">
-                            <img src="assets/icons/mir-card.svg">
-                            <span>1234 12•• •••• 1234</span>
+                            <img src="assets/icons/mir-card.svg" alt="mir-card">
+                            <span class="total-pay-card-numbers">1234 12•• •••• 1234</span>
                         </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">
                         <div class="total-pay-card-immediately-payment-checkbox-container">
-                            <input type="checkbox"/>
-                            <span>Списать оплату сразу</span>
+                            <label>
+                                <input type="checkbox" class="total-checkbox"/>
+                            </label>
+                            <span class="immediately-payment-text">Списать оплату сразу</span>
                         </div>
-                        <span>Спишем оплату с карты при получении</span>
+                        <span class="immediately-payment-text">Спишем оплату с карты при получении</span>
                     </div>
                 </div>
                 <div class="total-order-button-container">
-                    <button/>
+                    <button class="order-submit-button">Заказать</button>
                     <div class="total-order-checkbox-container">
-                        <input type="checkbox"/>
-                        <span>Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
+                        <img src="assets/icons/terms-checked.svg" alt="checked-icon"/>
+                        <span class="terms-text">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
                     </div>
                 </div>
             </div>
