@@ -567,6 +567,11 @@ button {
     color: #9797AF;
     text-decoration: line-through;
     border-bottom: 2px #9797AF dashed;
+
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
 }
 
 
@@ -1048,6 +1053,14 @@ button {
     line-height: 28px;
     letter-spacing: -0.2px;
 }
+.total-info-discount-text {
+
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
 
 .total-price-with-delivery-info-container {
     display: flex;
