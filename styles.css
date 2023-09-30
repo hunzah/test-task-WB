@@ -567,6 +567,10 @@ button {
     color: #9797AF;
     text-decoration: line-through;
     border-bottom: 2px #9797AF dashed;
+
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
 }
 
 
