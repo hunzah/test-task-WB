@@ -12,8 +12,12 @@
         <div class="header-title-container">
             <button class="header-burger-button">
                 <img class="header-burger-button-icon" src="assets/icons/burger-icon.svg" alt="burger-icon"/>
+                <img class="header-burger-button-mobile-icon" src="assets/icons/burger-mobile.svg" alt="burger-icon"/>
             </button>
-            <a class="brand-name">Товары и точка</a>
+            <a class="brand-name">
+                <span class="brand-name-text">Товары и точка</span>
+            </a>
+            <img class="header-search-icon-mobile" src="assets/icons/search-icon-mobile.svg" alt="search-icon"/>
         </div>
         <div class="header-search-container">
             <label for="header-input" class="header-search-input-label">
@@ -27,6 +31,7 @@
                 <span class="header-profile-text">Профиль</span>
             </div>
             <div class="header-basket-icon-container">
+                <span class="header-basket-goods-count-text">3</span>
                 <img src="assets/icons/basket-icon.svg" alt="profile-icon"/>
                 <span class="header-basket-text">Корзина</span>
             </div>
@@ -58,18 +63,29 @@
                                         <input type="checkbox" class="checkbox" id="card-checkbox-1">
                                         <label for="card-checkbox-1" class="custom-checkbox"></label>
                                     </div>
+                                    <span class="product-size-mobile-text">56</span>
                                     <img class="product-photo" src="assets/images/card-photo-2.png"
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span class="product-name-text">Футболка UZcotton мужская</span>
+                                    <div>
+                                        <div class="total-price-mobile-container">
+                                            <div class="price">
+                                                <span class="total-price-number">522</span>
+                                                <span class="total-price-currency">com</span>
+                                            </div>
+                                            <span class="total-price-discount-number">1051 сом</span>
+                                        </div>
+                                        <span class="product-name-text">Футболка UZcotton мужская</span>
+                                        <span class="product-name-text-mobile">Футболка UZcotton мужская</span>
+                                    </div>
                                     <div class="color-size-container">
                                         <span class="product-color-text">Цвет белый</span>
                                         <span class="product-size-text">Размер: 56</span>
                                     </div>
                                     <div class="address-container">
                                         <span class="pick-up-address-name-text">Каледино WB</span>
-                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text-wb">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -112,13 +128,23 @@
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
-                                    <span class="product-name-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
+                                    <div>
+                                        <div class="total-price-mobile-container">
+                                            <div class="price">
+                                                <span class="total-price-big-number">2 100 047</span>
+                                                <span class="total-price-currency">com</span>
+                                            </div>
+                                            <span class="total-price-discount-number">2 3047 сом</span>
+                                        </div>
+                                        <span class="product-name-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
+                                        <span class="product-name-text-mobile">Силиконовый чехол картхолдер (отверстия) для...</span>
+                                    </div>
                                     <div class="color-size-container">
                                         <span class="product-color-text">Цвет: прозрачный</span>
                                     </div>
                                     <div class="address-container">
                                         <span class="pick-up-address-name-text">Каледино WB</span>
-                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text-wb">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -159,11 +185,23 @@
                                     <img class="product-photo" src="assets/images/card-photo-3.png"
                                          alt="product-photo"/>
                                 </div>
+
                                 <div class="product-text-info">
-                                    <span class="product-name-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell </span>
+                                    <div>
+                                        <div class="total-price-mobile-container">
+
+                                            <div class="price">
+                                                <span class="total-price-number">494</span>
+                                                <span class="total-price-currency">com</span>
+                                            </div>
+                                            <span class="total-price-discount-number">950 сом</span>
+                                        </div>
+                                        <span class="product-name-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell</span>
+                                        <span class="product-name-text-mobile">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</span>
+                                    </div>
                                     <div class="address-container">
                                         <span class="pick-up-address-name-text">Каледино WB</span>
-                                        <span class="pick-up-address-name-text">OOO Вайлдберриз</span>
+                                        <span class="pick-up-address-name-text-wb">OOO Вайлдберриз</span>
                                     </div>
                                 </div>
                             </div>
@@ -208,11 +246,13 @@
                         <li class="card">
                             <div class="not-available-product-info-container">
                                 <div class="photo-and-checkbox">
+                                    <span class="product-size-mobile-text">56</span>
                                     <img class="product-photo" src="assets/images/card-photo-2.png"
                                          alt="product-photo"/>
                                 </div>
                                 <div class="product-text-info">
                                     <span class="product-name-text">Футболка UZcotton мужская</span>
+                                    <span class="product-name-text-mobile">Футболка UZcotton мужская</span>
                                     <div class="color-size-container">
                                         <span class="product-color-text">Цвет белый</span>
                                         <span class="product-size-text">Размер: 56</span>
@@ -242,6 +282,7 @@
                                 </div>
                                 <div class="product-text-info">
                                     <span class="product-name-text">Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe</span>
+                                    <span class="product-name-text-mobile">Силиконовый чехол картхолдер (отверстия) для...</span>
                                     <div class="color-size-container">
                                         <span class="product-color-text">>Цвет: прозрачный</span>
                                     </div>
@@ -271,6 +312,7 @@
                                 </div>
                                 <div class="product-text-info">
                                     <span class="product-name-text">Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell </span>
+                                    <span class="product-name-text-mobile">Карандаши цветные Faber-Castell "Замок", набор 24 цв...</span>
                                 </div>
                             </div>
 
@@ -301,15 +343,53 @@
                                 <div class="delivery-method-info">
                                     <div class="delivery-pick-up-point">
                                         <span class="delivery-pick-up-date-point-text">Пункт выдачи</span>
+                                        <div class="delivery-pick-up-point-expanded-mobile">
+                                            <span class="delivery-pick-up-date-point-expanded-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                                            <div class="delivery-pick-up-point-rating-container">
+                                                <div class="delivery-pick-up-point-rating-stars">
+                                                    <img src="assets/icons/rating-star.svg" alt="rating-star"/>
+                                                    <span class="delivery-pick-up-point-rating-text">4.99</span>
+                                                </div>
+                                                <span class="delivery-pick-up-point-rating-text">Ежедневно с 10 до 21</span>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="delivery-cost">
                                         <span class="delivery-pick-up-date-point-text">Стоимость доставки</span>
+                                        <span class="delivery-cost-expanded-text-mobile">Бесплатно</span>
                                     </div>
                                     <div class="delivery-date">
                                         <span class="delivery-pick-up-date-point-text">5—6 февраля</span>
+                                        <div class="delivery-goods-images-container-mobile">
+                                                <img class="goods-image" src="assets/images/card-photo-2.png"
+                                                     alt="goods-image"/>
+                                            <div class="delivery-goods-image-container">
+                                                <div class="delivery-goods-image-container">
+                                                    <span class="product-count-on-image-text">184</span>
+                                                <img class="goods-image" src="assets/images/card-photo-1.png"
+                                                     alt="goods-image"/>
+                                                </div>
+                                            </div>
+                                            <div class="delivery-goods-image-container">
+                                                <div class="delivery-goods-image-container">
+                                                    <span class="product-count-on-image-text">2</span>
+                                                <img class="goods-image" src="assets/images/card-photo-3.png"
+                                                     alt="goods-image"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                     <div class="delivery-date">
                                         <span class="delivery-pick-up-date-point-text">7—8 февраля</span>
+                                        <div class="delivery-date-expanded">
+                                            <div class="delivery-goods-images-container-mobile">
+                                                <div class="delivery-goods-image-container">
+                                                    <span class="product-count-on-image-text">16</span>
+                                                    <img class="goods-image" src="assets/images/card-photo-1.png"
+                                                         alt="goods-image"/>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="delivery-method-info-expanded">
@@ -328,18 +408,29 @@
                                     </div>
                                     <div class="delivery-date-expanded">
                                         <div class="delivery-goods-images-container">
-                                            <img class="goods-image" src="assets/images/card-photo-2.png"
-                                                 alt="goods-image"/>
-                                            <img class="goods-image" src="assets/images/card-photo-1.png"
-                                                 alt="goods-image"/>
-                                            <img class="goods-image" src="assets/images/card-photo-3.png"
-                                                 alt="goods-image"/>
+                                            <div class="delivery-goods-image-container">
+                                                <img class="goods-image" src="assets/images/card-photo-2.png"
+                                                     alt="goods-image"/>
+                                            </div>
+                                            <div class="delivery-goods-image-container">
+                                                <span class="product-count-on-image-text">184</span>
+                                                <img class="goods-image" src="assets/images/card-photo-1.png"
+                                                     alt="goods-image"/>
+                                            </div>
+                                            <div class="delivery-goods-image-container">
+                                                <span class="product-count-on-image-text">2</span>
+                                                <img class="goods-image" src="assets/images/card-photo-3.png"
+                                                     alt="goods-image"/>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="delivery-date-expanded">
                                         <div class="delivery-goods-images-container">
-                                            <img class="goods-image" src="assets/images/card-photo-1.png"
-                                                 alt="goods-image"/>
+                                            <div class="delivery-goods-image-container">
+                                                <span class="product-count-on-image-text">16</span>
+                                                <img class="goods-image" src="assets/images/card-photo-1.png"
+                                                     alt="goods-image"/>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -359,6 +450,7 @@
                             <div class="payment-method-header">
                                 <div class="payment-method-header-text-container">
                                     <span class="payment-method-header-text">Способ оплаты</span>
+                                    <button class="delivery-method-header-button">Изменить</button>
                                 </div>
                             </div>
                             <div class="payment-method-main">
@@ -386,13 +478,13 @@
                         </div>
                         <div class="receiver-inputs-container">
                             <div class="receiver-name-lastname-inputs-container">
-                                <div>
+                                <div class="input-and-error-container">
                                     <label class="receiver-name-label">
                                         <input class="receiver-name-input" placeholder="Имя"/>
                                     </label>
                                     <span class="receiver-input-error"></span>
                                 </div>
-                                <div>
+                                <div class="input-and-error-container">
                                     <label class="receiver-lastname-label">
                                         <input class="receiver-lastname-input" placeholder="Фамилия">
                                     </label>
@@ -400,19 +492,19 @@
                                 </div>
                             </div>
                             <div class="receiver-email-phone-inputs-container">
-                                <div>
+                                <div class="input-and-error-container">
                                     <label class="receiver-email-label">
                                         <input class="receiver-email-input" placeholder="Почта"/>
                                     </label>
                                     <span class="receiver-input-error"></span>
                                 </div>
-                                <div>
+                                <div class="input-and-error-container">
                                     <label class="receiver-phone-label">
                                         <input class="receiver-phone-input" placeholder="Телефон"/>
                                     </label>
                                     <span class="receiver-input-error"></span>
                                 </div>
-                                <div>
+                                <div class="input-and-error-container">
                                     <label class="receiver-INN-label">
                                         <input class="receiver-INN-input" placeholder="ИНН"/>
                                     </label>
@@ -492,11 +584,9 @@
                         </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">
-                        <div class="total-pay-card-immediately-payment-checkbox-container">
-                            <label>
-                                <input type="checkbox" class="total-checkbox"/>
-                            </label>
-                            <span class="immediately-payment-text">Списать оплату сразу</span>
+                        <div class="pick-all-checkbox-container">
+                            <input type="checkbox" class="checkbox" id="total-checkbox">
+                            <label for="total-checkbox" class="custom-checkbox-label"></label>
                         </div>
                         <span class="immediately-payment-text">Спишем оплату с карты при получении</span>
                     </div>
