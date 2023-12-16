@@ -437,6 +437,7 @@ ble-product-info-container
 .counter {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100px;
     height: 44px;
     border-radius: 8px;
@@ -990,10 +991,6 @@ button {
 }
 
 
-.total-pay-card-immediately-payment-container {
-
-}
-
 /*TOTAL*/
 .total-container {
     display: flex;
@@ -1303,7 +1300,7 @@ button {
     display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     body {
         display: inline-flex;
         flex-direction: column;
@@ -1667,6 +1664,9 @@ button {
         border-radius: 8px;
     }
 
+    .payment-container, .receiver-container {
+        padding: 16px 24px 24px 16px;
+    }
 
     .delivery-method-footer-info-container {
         padding: 0 24px;
