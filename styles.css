@@ -33,9 +33,10 @@
     --color-light-gray: #9797AF;
     --color-gray: rgba(255, 255, 255, 0.45);
     --color-dark-gray: rgba(255, 255, 255, 0.20);
-    --color-footer-gray:  #FFFFFFB2;
+    --color-footer-gray: #FFFFFFB2;
     --color-orange: #F55123;
     --color-pink: #CB11AB;
+    --color-light-pink: #e716c1;
     --color-light-black: rgba(0, 0, 0, 0.10);
     --color-light-green: #0CB477;;
     --color-green: rgba(12, 180, 119, 0.20);
@@ -187,7 +188,7 @@ button {
 .header-search-input {
     flex: 1;
     padding: 0;
-    color:  var(--color-white);
+    color: var(--color-white);
     background-color: inherit;
     border: none;
 
@@ -530,9 +531,19 @@ button {
     border: none;
     background-color: inherit;
 
-    &:disabled {
-        opacity: 0.7;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--color-orange);
+
+        &:disabled {
+            color: var(--color-black);
+            opacity: 0.3;
+            cursor: default;
+        }
+
     }
+
 }
 
 .input-count-screen {
@@ -698,6 +709,11 @@ button {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+
+    &:hover {
+        color: var(--color-orange);
+        cursor: pointer;
+    }
 }
 
 .delivery-method-main {
@@ -1073,7 +1089,7 @@ button {
 
     padding: 16px 24px 24px 24px;
     border-radius: 16px;
-    box-shadow: 0 0 1px 0 var(--color-shadow), 0 2px 10px 0var(--color-shadow-light);
+    box-shadow: 0 0 1px 0 var(--color-shadow), 0 2px 10px 0 var(--color-shadow-light);
     background-color: var(--color-white);
 }
 
@@ -1300,12 +1316,17 @@ button {
     align-self: stretch;
 
     border-radius: 8px;
-    background: var(--color-pink);
+    background-color: var(--color-pink);
     color: var(--color-background);
     text-align: center;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-light-pink);
+    }
 }
 
 .total-order-checkbox-container {
