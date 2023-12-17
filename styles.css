@@ -1,9 +1,31 @@
-@import 'assets/fonts/style.css';
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-Regular.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-SemiBold.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-Bold.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
 
 body {
-    font-family: Segoe UI Regular, Arial, sans-serif;
-
-    max-width: 1400px;
+    font-family: SegoeUI, Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
     margin: 0;
     padding: 0;
     background: #F6F6FA;
@@ -198,9 +220,9 @@ button {
 .main-content {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 32px;
     padding: 0 24px 16px 24px;
-
     height: 100%;
 }
 
@@ -211,6 +233,7 @@ button {
     gap: 27px;
     flex: 1 0 0;
 
+    max-width: 890px;
     height: 100%;
 
 }
