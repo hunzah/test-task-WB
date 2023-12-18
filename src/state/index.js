@@ -24,7 +24,7 @@ export const state = {
             name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
             color: 'прозрачный',
             address: 'Каледино WB',
-            companyName: 'OOO Вайлдберриз',
+            companyName: 'OOO Мегапрофстиль',
             price: '2 300 047', priceWithDiscount: '2 100 047', currency: 'сом', count: 200,
             left: 200,
             delivery: {

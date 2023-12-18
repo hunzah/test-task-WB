@@ -44,9 +44,21 @@
     --color-shadow-light: rgba(0, 0, 0, 0.15);
     --color-back-mobile: #F0ECF4;
 }
-.like-icon {
-    color:darkred;
+
+.like-button {
+    cursor: pointer;
+    .like-icon:hover{
+        fill: var(--color-pink);
+    }
 }
+
+.trash-button:hover {
+    cursor: pointer;
+    .trash-icon path {
+        fill: var(--color-orange);
+    }
+}
+
 /*template */
 .rotate {
     transform: rotate(180deg);
