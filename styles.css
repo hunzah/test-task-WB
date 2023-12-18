@@ -1,11 +1,57 @@
-@import 'assets/fonts/style.css';
+/*fonts */
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-Regular.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
 
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-SemiBold.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SegoeUI';
+    src: url('assets/fonts/SegoeUI/SegoeUI-Bold.woff2') format('woff2'),
+    url('assets/fonts/SegoeUI/SegoeUI-Bold.woff') format('woff');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+/*variables */
+:root {
+    --color-white: #fff;
+    --color-black: #000;
+    --color-background: #F6F6FA;
+    --color-violet: #6725a8;
+    --color-light-gray: #9797AF;
+    --color-gray: rgba(255, 255, 255, 0.45);
+    --color-dark-gray: rgba(255, 255, 255, 0.20);
+    --color-footer-gray: #FFFFFFB2;
+    --color-orange: #F55123;
+    --color-pink: #CB11AB;
+    --color-light-pink: #e716c1;
+    --color-light-black: rgba(0, 0, 0, 0.10);
+    --color-light-green: #0CB477;;
+    --color-green: rgba(12, 180, 119, 0.20);
+    --color-shadow: rgba(0, 0, 0, 0.30);
+    --color-shadow-light: rgba(0, 0, 0, 0.15);
+    --color-back-mobile: #F0ECF4;
+}
+
+/*css*/
 body {
-    font-family: Segoe UI Regular, Arial, sans-serif;
+    font-family: SegoeUI, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background: #F6F6FA;
-    color: #000;
+    background-color: var(--color-background);
+    color: var(--color-black);
 }
 
 button {
@@ -22,8 +68,8 @@ button {
     align-items: flex-start;
 
     height: 112px;
-    color: white;
-    background-color: #6725A8;
+    color: var(--color-white);
+    background-color: var(--color-violet);
 
     &::after {
         content: '';
@@ -33,7 +79,7 @@ button {
         height: 24px;
         border-radius: 24px 24px 0 0;
         bottom: 0;
-        background-color: #F6F6FA;
+        background-color: var(--color-background);
     }
 }
 
@@ -42,7 +88,7 @@ button {
     align-items: center;
     gap: 32px;
     align-self: stretch;
-
+    justify-content: center;
     height: 88px;
     padding: 0 3px 0 24px;
 }
@@ -57,13 +103,20 @@ button {
 }
 
 .brand-name {
+    text-decoration: none;
+    color: inherit;
     display: flex;
     width: 106px;
     padding: 1px 0 7px 0;
     justify-content: center;
     align-items: center;
-    flex-shrink: 0;
+    letter-spacing: 0.12em;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
+
 
 .brand-name-text {
     font-size: 28px;
@@ -85,7 +138,12 @@ button {
     padding: 0 9px;
     height: 48px;
     border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.45);
+    border: 1px solid var(--color-gray);
+
+    &:hover {
+        border: 1px solid var(--color-white);
+        cursor: pointer;
+    }
 }
 
 .header-burger-button-icon {
@@ -106,11 +164,11 @@ button {
     align-items: center;
     flex: 1 0 0;
 
-    width: 100%;
+    max-width: 970px;
     height: 48px;
     padding: 0 20px;
     border-radius: 36px;
-    background-color: rgba(255, 255, 255, 0.20);
+    background-color: var(--color-dark-gray);
 }
 
 .header-search-input-label {
@@ -130,7 +188,7 @@ button {
 .header-search-input {
     flex: 1;
     padding: 0;
-    color: white;
+    color: var(--color-white);
     background-color: inherit;
     border: none;
 
@@ -151,6 +209,10 @@ button {
     align-items: center;
     gap: 6px;
     align-self: stretch;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .header-basket-icon-container {
@@ -170,7 +232,7 @@ button {
     flex-direction: column;
 
     border-radius: 16px;
-    background: #F55123;
+    background: var(--color-orange);
 
     flex-shrink: 0;
 
@@ -184,21 +246,22 @@ button {
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
+
+
 }
 
 /*main*/
 .main {
-    /*height: calc(100vh - 112px - 88px);*/
     margin: 0 auto;
-    background-color: #F6F6FA;
+    background-color: var(--color-background);
 }
 
 .main-content {
     display: flex;
     align-items: flex-start;
+    justify-content: center;
     gap: 32px;
     padding: 0 24px 16px 24px;
-
     height: 100%;
 }
 
@@ -209,6 +272,7 @@ button {
     gap: 27px;
     flex: 1 0 0;
 
+    max-width: 890px;
     height: 100%;
 
 }
@@ -269,7 +333,7 @@ button {
     padding: 0;
     margin: 0;
     background-color: inherit;
-    border: 1px #9797AF solid;
+    border: 1px var(--color-light-gray) solid;
     border-radius: 6px;
     box-sizing: border-box;
     line-height: 0;
@@ -283,7 +347,7 @@ button {
 
 .checkbox[type='checkbox']:checked:after {
     display: block;
-    background-color: #CB11AB;
+    background-color: var(--color-pink);
     border-radius: 6px;
     width: 22px;
     height: 22px;
@@ -316,7 +380,7 @@ button {
         content: '';
         width: 100%;
         height: 1px;
-        background: rgba(0, 0, 0, 0.10);
+        background: var(--color-light-black);
     }
 }
 
@@ -346,22 +410,20 @@ button {
 }
 
 .photo-and-checkbox {
+    height: 100%;
     display: flex;
     align-items: flex-start;
     gap: 12px;
 }
 
 .checkbox-container {
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin: auto;
 }
 
 .product-photo {
     width: 72px;
     height: 96px;
+    border-radius: 8px
 }
 
 .product-text-info {
@@ -375,7 +437,7 @@ button {
     width: 275px;
 }
 
-ble-product-info-container
+
 .product-name-text {
     font-size: 16px;
     font-weight: 400;
@@ -393,7 +455,7 @@ ble-product-info-container
 }
 
 .pick-up-address-name-text, .pick-up-address-name-text-wb {
-    color: #9797AF;
+    color: var(--color-light-gray);
 
     font-size: 13px;
     font-weight: 400;
@@ -435,10 +497,11 @@ ble-product-info-container
 .counter {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100px;
     height: 44px;
     border-radius: 8px;
-    background: #FFF;
+    background: var(--color-white);
 }
 
 button {
@@ -466,9 +529,19 @@ button {
     border: none;
     background-color: inherit;
 
-    &:disabled {
-        opacity: 0.7;
+
+    &:hover {
+        cursor: pointer;
+        color: var(--color-orange);
+
+        &:disabled {
+            color: var(--color-black);
+            opacity: 0.3;
+            cursor: default;
+        }
+
     }
+
 }
 
 .input-count-screen {
@@ -490,7 +563,7 @@ button {
 }
 
 .products-left-text {
-    color: #FF3B30;
+    color: var(--color-orange);
     width: 100%;
     text-align: left;
 
@@ -554,7 +627,7 @@ button {
 
 .total-price-currency {
     width: 35px;
-    color: #000;
+    color: var(--color-black);
     text-align: right;
 
     font-size: 16px;
@@ -566,9 +639,9 @@ button {
 .total-price-discount-number {
     display: flex;
     align-items: baseline;
-    color: #9797AF;
+    color: var(--color-light-gray);
     text-decoration: line-through;
-    border-bottom: 2px #9797AF dashed;
+    border-bottom: 2px var(--color-light-gray) dashed;
 
     font-size: 13px;
     font-weight: 400;
@@ -593,7 +666,7 @@ button {
     gap: 24px;
     align-self: stretch;
 
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
     border-radius: 16px;
 }
 
@@ -629,11 +702,16 @@ button {
     margin: 0;
     border: none;
 
-    color: #CB11AB;
+    color: var(--color-pink);
     text-align: right;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+
+    &:hover {
+        color: var(--color-orange);
+        cursor: pointer;
+    }
 }
 
 .delivery-method-main {
@@ -759,7 +837,7 @@ button {
     position: absolute;
     top: -5px;
     right: -5px;
-    color: white;
+    color: var(--color-white);
 }
 
 .delivery-goods-images-container-mobile {
@@ -794,8 +872,8 @@ button {
 }
 
 .return-delivery-text-green {
-    color: #0CB477;
-    border-bottom: rgba(12, 180, 119, 0.20) 1px dotted;
+    color: var(--color-light-green);
+    border-bottom: var(--color-green) 1px dotted;
 }
 
 .payment-container, .receiver-container {
@@ -807,7 +885,7 @@ button {
 
     border-radius: 16px;
 
-    background-color: #FFFFFF;
+    background-color: var(--color-white);
 }
 
 .payment-container {
@@ -860,7 +938,7 @@ button {
     gap: 8px;
 
     border-radius: 4px;
-    background-color: #F6F6FA;
+    background-color: var(--color-background);
 }
 
 .payment-method-main-image {
@@ -890,7 +968,7 @@ button {
 }
 
 .payment-method-footer-text {
-    color: #9797AF;
+    color: var(--color-light-gray);
 
     font-size: 13px;
     font-weight: 400;
@@ -935,7 +1013,7 @@ button {
     gap: 3px;
     align-self: stretch;
 
-    border-bottom: rgba(0, 0, 0, 0.20) 1px solid;
+    border-bottom: var(--color-light-black) 1px solid;
 }
 
 .receiver-name-input, .receiver-lastname-input, .receiver-email-input, .receiver-phone-input, .receiver-INN-input {
@@ -947,7 +1025,7 @@ button {
     width: 100%;
     outline: none;
 
-    color: #9797AF;
+    color: var(--color-light-gray);
 
     font-size: 16px;
     font-weight: 400;
@@ -973,7 +1051,7 @@ button {
 
 .receiver-input-error, .receiver-input-text {
     display: block;
-    color: #F55123;
+    color: var(--color-orange);
     align-self: stretch;
     height: 14px;
     margin-top: 4px;
@@ -984,13 +1062,9 @@ button {
 }
 
 .receiver-input-text {
-    color: black;
+    color: var(--color-black);
 }
 
-
-.total-pay-card-immediately-payment-container {
-
-}
 
 /*TOTAL*/
 .total-container {
@@ -1013,8 +1087,8 @@ button {
 
     padding: 16px 24px 24px 24px;
     border-radius: 16px;
-    box-shadow: 0 0 1px 0 rgba(0, 0, 0, 0.30), 0 2px 10px 0 rgba(0, 0, 0, 0.15);
-    background-color: #FFF;
+    box-shadow: 0 0 1px 0 var(--color-shadow), 0 2px 10px 0 var(--color-shadow-light);
+    background-color: var(--color-white);
 }
 
 .total-info-container {
@@ -1133,7 +1207,7 @@ button {
 }
 
 .total-delivery-date-text {
-    color: #CB11AB;
+    color: var(--color-pink);
 
     font-size: 13px;
     font-weight: 400;
@@ -1148,7 +1222,7 @@ button {
     align-self: stretch;
 
     border-radius: 8px;
-    background: #F6F6FA;
+    background: var(--color-background);
 }
 
 .total-pay-card-content {
@@ -1204,7 +1278,7 @@ button {
     align-self: stretch;
 
     border-radius: 8px;
-    background: #F6F6FA;
+    background: var(--color-background);
 }
 
 .total-pay-card-immediately-payment-checkbox-container {
@@ -1240,12 +1314,17 @@ button {
     align-self: stretch;
 
     border-radius: 8px;
-    background: #CB11AB;
-    color: #FFF;
+    background-color: var(--color-pink);
+    color: var(--color-background);
     text-align: center;
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-light-pink);
+    }
 }
 
 .total-order-checkbox-container {
@@ -1270,8 +1349,8 @@ button {
     justify-content: end;
     align-self: stretch;
     height: 88px;
-    color: #FFFFFFB2;
-    background-color: #6725A8;
+    color: var(--color-footer-gray);
+    background-color: var(--color-violet);
 
     &::before {
         content: '';
@@ -1281,7 +1360,7 @@ button {
         width: 100%;
         height: 24px;
         border-radius: 0 0 24px 24px;
-        background-color: #F6F6FA;
+        background-color: var(--color-background);
     }
 }
 
@@ -1301,7 +1380,7 @@ button {
     display: none;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1024px) {
     body {
         display: inline-flex;
         flex-direction: column;
@@ -1310,34 +1389,25 @@ button {
     }
 
     .header {
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
+        height: 80px;
         align-self: stretch;
     }
 
     .header-content {
-        display: flex;
-        height: 56px;
         padding: 0 13px;
-        align-items: center;
-        gap: 16px;
         align-self: stretch;
     }
 
 
     .header-title-container {
+        align-items: flex-start;
         height: 56px;
-
         padding: 11px 4px 21px 4px;
         width: 100%;
         align-self: stretch;
     }
 
     .brand-name {
-        justify-content: center;
-        flex: 1 0 0;
-        align-self: stretch;
         width: 100%;
     }
 
@@ -1359,7 +1429,7 @@ button {
         padding: 0 9px;
         height: 48px;
         border-radius: 8px;
-        border: 1px solid rgba(255, 255, 255, 0.45);
+        border: 1px solid var(--color-light-gray);
     }
 
     .header-search-container {
@@ -1424,6 +1494,28 @@ button {
         gap: 48px;
     }
 
+    .counter {
+        width: 80px;
+        height: 32px;
+    }
+
+    .count-button {
+
+        text-align: center;
+        font-size: 20px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        letter-spacing: -0.2px;
+    }
+
+    .custom-input-count-screen {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+    }
+
     .in-stock-container, .out-of-stock-container {
         padding: 0 16px;
         box-sizing: border-box;
@@ -1449,7 +1541,7 @@ button {
             content: '';
             width: 100%;
             height: 1px;
-            background: rgba(0, 0, 0, 0.10);
+            background: var(--color-light-black);
         }
     }
 
@@ -1472,7 +1564,7 @@ button {
 
     .checkbox-container {
         position: absolute;
-        bottom: 37px;
+        top: 1px;
         left: 3px;
     }
 
@@ -1493,7 +1585,7 @@ button {
         height: 22px;
         padding: 0 4px 3px;
         border-radius: 4px;
-        background-color: #FFFFFF;
+        background-color: var(--color-white);
 
         font-size: 14px;
         font-weight: 400;
@@ -1665,6 +1757,9 @@ button {
         border-radius: 8px;
     }
 
+    .payment-container, .receiver-container {
+        padding: 16px 24px 24px 16px;
+    }
 
     .delivery-method-footer-info-container {
         padding: 0 24px;
@@ -1734,7 +1829,7 @@ button {
         padding: 8px 0 0;
         border-radius: 16px 16px 0 0;
         box-shadow: none;
-        background-color: #F6F6FA;
+        background-color: var(--color-background);
     }
 
     .total-info-container {
@@ -1756,7 +1851,7 @@ button {
     }
 
     .total-return-delivery-container {
-        background: #F0ECF4;
+        background: var(--color-back-mobile);
     }
 
     .total-pay-card-header {
@@ -1765,7 +1860,7 @@ button {
 
     .total-pay-card-immediately-payment-container {
         margin: 16px 0 24px;
-        background: #F0ECF4;
+        background: var(--color-back-mobile);
     }
 
     .navbar-mobile {
@@ -1776,11 +1871,9 @@ button {
         align-items: center;
         align-self: stretch;
 
-        background: #FFF;
+        background: var(--color-white);
 
 
-        box-shadow: 0 -0.5px 0 0 rgba(0, 0, 0, 0.30);
-        backdrop-filter: blur(2.5px);
     }
 
     .navbar-mobile-basket-icon-container {
@@ -1793,7 +1886,7 @@ button {
     .navbar-basket-goods-count-text-mobile {
         top: 0;
         right: -3px;
-        color: #FFFFFF;
+        color: var(--color-white);
     }
 
 }
