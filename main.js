@@ -1,4 +1,4 @@
-// window.onload = function () {
-// console.log('aaaaaaaaaaaaa')
-// console.log('bbbbbbbb')
-// };
+import {state} from './src/state/index.js'
+
+
+
