@@ -1,7 +1,4 @@
-// import img from '../../assets/images/card-photo-1.png'
-
-export const state = {
-
+export const cards = {
     products: [
         {
             id: 1,
@@ -13,10 +10,6 @@ export const state = {
             companyName: 'OOO Вайлдберриз',
             price: '1051', priceWithDiscount: '522', currency: 'сом', count: 1,
             left: 2,
-
-            delivery: {
-                1: 2
-            }, isFavorite: false
         },
         {
             id: 2,
@@ -27,11 +20,6 @@ export const state = {
             companyName: 'OOO Мегапрофстиль',
             price: '2 300 047', priceWithDiscount: '2 100 047', currency: 'сом', count: 200,
             left: 200,
-            delivery: {
-                1: 184,
-                2: 66
-            }, isFavorite: true
-
         },
         {
             id: 3,
@@ -42,9 +30,7 @@ export const state = {
             price: '905', priceWithDiscount: '494', currency: 'сом', count: 2,
             left: 2,
             iconUrl: "/img/delivery/pencils-icon.png",
-            delivery: {
-                1: 2
-            }, isFavorite: false
+
 
         },
     ],

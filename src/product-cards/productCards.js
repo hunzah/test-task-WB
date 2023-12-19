@@ -1,11 +1,14 @@
-import {state} from '../state/index.js'
-import {removeItem} from './utils.js'
+import {cards} from '../state/cards.js'
+import {total} from '../state/total.js'
+import {calculatePrice, removeProduct} from "./logic/productCardLogic.js";
+
 
 document.addEventListener('DOMContentLoaded', function () {
     const productList = document.getElementById('cards-list');
     const header = document.querySelector('.accordion-header');
+
     if (productList) {
-        state.products.forEach(product => {
+        cards.products.forEach(product => {
 
 
             const listItem = document.createElement('li');
@@ -17,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="product-info-container">
                     <div class="photo-and-checkbox">
                         <div class="checkbox-container">
-                            <input type="checkbox" class="checkbox" id="card-checkbox-${product.id}">
+                            <input checked type="checkbox" class="checkbox" id="card-checkbox-${product.id}">
                             <label for="card-checkbox-${product.id}" class="custom-checkbox"></label>
                         </div>
                         <span class=${product.size ? 'product-size-mobile-text' : ''}>${product.size || ''}</span>
@@ -85,26 +88,20 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             </div>
             `;
-
-
             productList.appendChild(listItem);
 
             //delete cards logic
             const trashButton = document.getElementById(`${product.id}-count-button`);
             trashButton.addEventListener('click', () => {
-                if (state.products.length === 1 && header) {
-                    header.remove();
-                }
-                const indexToRemove = state.products.findIndex(p => p.id === product.id);
-                if (indexToRemove !== -1) {
-                    state.products.splice(indexToRemove, 1);
-                }
-                listItem.remove();
+                removeProduct(product, listItem, header, cards);
             });
+            //choose product logic
+            const checkbox = document.getElementById(`card-checkbox-${product.id}`);
+            checkbox.addEventListener('change', function (){
+                calculatePrice(product, this.checked, total);
+            })
         });
     }
 });
-
-
 
 

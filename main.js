@@ -1,4 +1,4 @@
-import {state} from '/src/state/index.js'
+import {total} from '/src/state/total.js'
 
 function toggleContentVisibility2() {
     const accordionButton = document.getElementById('not-available-accordion-arrow-button');
@@ -39,7 +39,7 @@ function toggleContentVisibility() {
                 accordionButton.classList.remove('rotate');
             } else {
                 cardsContainer.style.display = 'none';
-                checkbox.innerHTML = `<span>${state.products.forEach()}</span>`;
+                checkbox.innerHTML = `<span>${total.totalAmount} сом</span>`;
                 accordionButton.classList.add('rotate');
             }
         });
