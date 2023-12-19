@@ -39,7 +39,8 @@ function toggleContentVisibility() {
                 accordionButton.classList.remove('rotate');
             } else {
                 cardsContainer.style.display = 'none';
-                checkbox.innerHTML = `<span>${total.totalAmount} сом</span>`;
+                checkbox.innerHTML = `<span>${total.totalProducts} товара · ${total.totalAmount} ${total.currency}</span>`;
+                checkbox.classList.add('out-of-stock-text');
                 accordionButton.classList.add('rotate');
             }
         });

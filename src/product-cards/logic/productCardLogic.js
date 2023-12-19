@@ -1,4 +1,9 @@
-import {updateTotalDiscount, updateTotalPrice, updateTotalWithoutDiscount} from "../../total/updateTotal.js";
+import {
+    updateTotalDiscount,
+    updateTotalPrice,
+    updateTotalProducts,
+    updateTotalWithoutDiscount
+} from "../../total/updateTotal.js";
 
 
 export function removeProduct(product, listItem, header, cards) {
@@ -19,22 +24,23 @@ export function removeProduct(product, listItem, header, cards) {
 export function calculatePrice(product, isChecked, total) {
     let priceWithDiscount = Number(product.priceWithDiscount.replace(/\s/g, ''));
     let price = Number(product.price.replace(/\s/g, ''));
+    let productAmount = product.count
 
     if (isChecked) {
         total.priceWithoutDiscount += price;
         total.discount += price - priceWithDiscount;
         total.totalAmount += priceWithDiscount;
+        total.totalProducts += productAmount
     } else {
         total.priceWithoutDiscount -= price;
         total.discount -= price - priceWithDiscount;
         total.totalAmount -= priceWithDiscount;
+        total.totalProducts -= productAmount
     }
-
-    console.log('Total Amount: ', total.totalAmount);
-    console.log('Total Discount: ', total.discount);
-    console.log('Price With Discount: ', total.priceWithoutDiscount);
+    console.log('Product count: ', total.totalProducts);
 
     updateTotalPrice(total.totalAmount);
     updateTotalWithoutDiscount(total.priceWithoutDiscount);
     updateTotalDiscount(total.discount);
+    updateTotalProducts(total.totalProducts);
 }

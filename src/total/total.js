@@ -12,17 +12,17 @@ document.addEventListener('DOMContentLoaded', function () {
                     <div class="total-info-price-container">
                         <div class="total-info-price-header">
                             <span class="total-info-title-text">Итого</span>
-                            <span class="total-info-price-text">${total.totalAmount} сом</span>
+                            <span class="total-info-price-text">${total.totalAmount} ${total.currency}</span>
                         </div>
 
                         <div class="total-price-with-delivery-info-container">
                             <div class="total-goods-quantity-text-container">
                                 <span class="total-info-text" id="prod-amount">${total.totalProducts} товара</span>
-                                <span class="total-info-text" id="prod-price-amount">${total.priceWithoutDiscount}</span>
+                                <span class="total-info-text" id="prod-price-amount">${total.priceWithoutDiscount} ${total.currency}</span>
                             </div>
                             <div class="total-discount-text-container">
                                 <span class="total-info-text">Скидка</span>
-                                <span class="total-info-text" id="prod-discount-amount">-${total.discount}</span>
+                                <span class="total-info-text" id="prod-discount-amount">-${total.discount} ${total.currency}</span>
                             </div>
                             <div class="total-delivery-text-container">
                                 <span class="total-info-text">Доставка</span>

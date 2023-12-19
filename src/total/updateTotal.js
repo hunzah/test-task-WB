@@ -16,4 +16,11 @@ export function updateTotalDiscount(value) {
         totalDiscountElement.textContent = `${value} сом`;
     }
 }
+export function updateTotalProducts(value) {
+    const totalDiscountElement = document.getElementById('prod-amount');
+    if (totalDiscountElement) {
+        totalDiscountElement.textContent = `${value} товара`;
+    }
+}
+
 

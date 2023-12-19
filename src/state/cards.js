@@ -8,7 +8,9 @@ export const cards = {
             size: '56',
             address: 'Каледино WB',
             companyName: 'OOO Вайлдберриз',
-            price: '1051', priceWithDiscount: '522', currency: 'сом', count: 1,
+            price: '1051', priceWithDiscount: '522',
+            currency: 'сом',
+            count: 1,
             left: 2,
         },
         {
@@ -18,7 +20,9 @@ export const cards = {
             color: 'прозрачный',
             address: 'Каледино WB',
             companyName: 'OOO Мегапрофстиль',
-            price: '2 300 047', priceWithDiscount: '2 100 047', currency: 'сом', count: 200,
+            price: '2 300 047', priceWithDiscount: '2 100 047',
+            currency: 'сом',
+            count: 200,
             left: 200,
         },
         {
@@ -27,7 +31,9 @@ export const cards = {
             name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell',
             address: 'Каледино WB',
             companyName: 'OOO Вайлдберриз',
-            price: '905', priceWithDiscount: '494', currency: 'сом', count: 2,
+            price: '905', priceWithDiscount: '494',
+            currency: 'сом',
+            count: 2,
             left: 2,
             iconUrl: "/img/delivery/pencils-icon.png",
 
