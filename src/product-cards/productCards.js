@@ -1,9 +1,13 @@
 import {state} from '../state/index.js'
+import {removeItem} from './utils.js'
 
 document.addEventListener('DOMContentLoaded', function () {
     const productList = document.getElementById('cards-list');
+    const header = document.querySelector('.accordion-header');
     if (productList) {
         state.products.forEach(product => {
+
+
             const listItem = document.createElement('li');
             const bigNumber = Number(product.priceWithDiscount.replace(/\s/g, ''));
 
@@ -82,9 +86,15 @@ document.addEventListener('DOMContentLoaded', function () {
             </div>
             `;
 
+
             productList.appendChild(listItem);
+
+            //delete cards logic
             const trashButton = document.getElementById(`${product.id}-count-button`);
             trashButton.addEventListener('click', () => {
+                if (state.products.length === 1 && header) {
+                    header.remove();
+                }
                 const indexToRemove = state.products.findIndex(p => p.id === product.id);
                 if (indexToRemove !== -1) {
                     state.products.splice(indexToRemove, 1);

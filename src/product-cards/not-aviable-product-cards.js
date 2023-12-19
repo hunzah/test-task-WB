@@ -2,6 +2,8 @@ import {state} from '../state/index.js'
 
 document.addEventListener('DOMContentLoaded', function () {
     const productList = document.getElementById('not-available-prod-cards-list');
+    const header = document.querySelector('.out-of-stock-accordion-header');
+
     if (productList) {
         state.notAvailableProducts.forEach(product => {
             const listItem = document.createElement('li');
@@ -50,8 +52,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 </div>
             `;
             productList.appendChild(listItem);
+
+            //delete cards logic
             const trashButton = document.getElementById(`${product.id}-count-button`);
             trashButton.addEventListener('click', () => {
+                if (state.notAvailableProducts.length === 1 && header) {
+                    header.remove();
+                }
                 const indexToRemove = state.notAvailableProducts.findIndex(p => p.id === product.id);
                 if (indexToRemove !== -1) {
                     state.notAvailableProducts.splice(indexToRemove, 1);
