@@ -45,6 +45,11 @@
     --color-back-mobile: #F0ECF4;
 }
 
+/*template */
+.rotate {
+    transform: rotate(180deg);
+}
+
 /*css*/
 body {
     font-family: SegoeUI, Arial, sans-serif;
@@ -304,7 +309,8 @@ button {
     width: 100%;
 }
 
-.accordion-header {
+.accordion-header, .out-of-stock-accordion-header {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -312,6 +318,16 @@ button {
     gap: 11px;
 
     width: 100%;
+
+}
+
+.accordion-header::after {
+    position: absolute;
+    top: 40px;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--color-light-black);
 }
 
 .pick-all-checkbox-container {
@@ -374,20 +390,24 @@ button {
     list-style: none;
     margin: 0;
     padding: 0;
+}
 
-    &::before {
-        position: absolute;
-        content: '';
-        width: 100%;
-        height: 1px;
-        background: var(--color-light-black);
-    }
+.not-available-cards-container::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 1px;
+    background: var(--color-light-black);
 }
 
 .accordion-arrow-button {
     padding: 0;
     margin: 0;
     border: none;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .card {
@@ -579,6 +599,20 @@ button {
     justify-content: center;
     align-items: center;
     gap: 16px;
+}
+
+.like-button {
+    cursor: pointer;
+    .like-icon:hover{
+        fill: var(--color-pink);
+    }
+}
+
+.trash-button:hover {
+    cursor: pointer;
+    .trash-icon path {
+        fill: var(--color-orange);
+    }
 }
 
 .total-price-mobile-container {
@@ -1067,6 +1101,7 @@ button {
 
 
 /*TOTAL*/
+
 .total-container {
     display: flex;
     flex-direction: column;
@@ -1341,6 +1376,7 @@ button {
 }
 
 /*footer*/
+
 .footer {
     position: relative;
     display: flex;
@@ -1535,14 +1571,6 @@ button {
         align-items: flex-start;
         gap: 12px;
         align-self: stretch;
-
-        &::before {
-            position: absolute;
-            content: '';
-            width: 100%;
-            height: 1px;
-            background: var(--color-light-black);
-        }
     }
 
     .product-info-container, .not-available-product-info-container {
@@ -1555,6 +1583,7 @@ button {
     .photo-and-checkbox {
         position: relative;
         align-items: center;
+        gap: 0;
     }
 
     .product-photo {
@@ -1564,7 +1593,7 @@ button {
 
     .checkbox-container {
         position: absolute;
-        top: 1px;
+        top: 3px;
         left: 3px;
     }
 
@@ -1583,8 +1612,8 @@ button {
 
         width: auto;
         height: 22px;
-        padding: 0 4px 3px;
-        border-radius: 4px;
+        padding: 0 4px;
+        border-radius: 6px;
         background-color: var(--color-white);
 
         font-size: 14px;
@@ -1597,16 +1626,17 @@ button {
     }
 
     .total-price-mobile-container {
+        width: 196px;
         display: flex;
         align-items: flex-end;
         gap: 5px;
-        flex: 1 0 0;
     }
 
     .total-price-big-number {
         align-items: center;
         justify-content: flex-end;
         width: 100%;
+        height: 0;
     }
 
     .total-price-number {
@@ -1621,9 +1651,16 @@ button {
     }
 
     .product-name-text-mobile {
-        display: block;
         font-size: 14px;
         line-height: 20px;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+
+        overflow: hidden;
+        text-overflow: ellipsis;
+
+
     }
 
     .product-name-text {
@@ -1636,6 +1673,7 @@ button {
 
     .count-and-price-container {
         width: 100%;
+        padding: 0;
     }
 
     .quantity-goods-container {
@@ -1647,6 +1685,7 @@ button {
         align-self: stretch;
         gap: 16px;
         width: 100%;
+        padding: 0;
     }
 
     .buttons-container {
