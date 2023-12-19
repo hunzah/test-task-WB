@@ -22,22 +22,26 @@ export function removeProduct(product, listItem, header, cards) {
 
 
 export function calculatePrice(product, isChecked, total) {
-    let priceWithDiscount = Number(product.priceWithDiscount.replace(/\s/g, ''));
-    let price = Number(product.price.replace(/\s/g, ''));
-    let productAmount = product.count
+    const priceWithDiscount = parseInt(product.priceWithDiscount.replace(/\s/g, ''), 10);
+    const price = parseInt(product.price.replace(/\s/g, ''), 10);
+    const productAmount = parseInt(product.count, 10);
+
+    const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
 
     if (isChecked) {
-        total.priceWithoutDiscount += price;
-        total.discount += price - priceWithDiscount;
-        total.totalAmount += priceWithDiscount;
-        total.totalProducts += productAmount
+        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
+        total.discount = parseAndSum(total.discount, price - priceWithDiscount);
+        total.totalAmount = parseAndSum(total.totalAmount, priceWithDiscount);
+        total.totalProducts = parseAndSum(total.totalProducts, productAmount);
     } else {
-        total.priceWithoutDiscount -= price;
-        total.discount -= price - priceWithDiscount;
-        total.totalAmount -= priceWithDiscount;
-        total.totalProducts -= productAmount
+        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, -price);
+        total.discount = parseAndSum(total.discount, -(price - priceWithDiscount));
+        total.totalAmount = parseAndSum(total.totalAmount, -priceWithDiscount);
+        total.totalProducts = parseAndSum(total.totalProducts, -productAmount);
     }
+
     console.log('Product count: ', total.totalProducts);
+    console.log('total.priceWithoutDiscount: ', total.priceWithoutDiscount);
 
     updateTotalPrice(total.totalAmount);
     updateTotalWithoutDiscount(total.priceWithoutDiscount);
