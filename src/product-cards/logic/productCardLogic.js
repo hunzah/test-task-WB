@@ -1,4 +1,9 @@
-import {updateTotalDiscount, updateTotalPrice, updateTotalWithoutDiscount} from "../../total/updateTotal.js";
+import {
+    updateTotalDiscount,
+    updateTotalPrice,
+    updateTotalProducts,
+    updateTotalWithoutDiscount
+} from "../../total/updateTotal.js";
 
 
 export function removeProduct(product, listItem, header, cards) {
@@ -17,24 +22,29 @@ export function removeProduct(product, listItem, header, cards) {
 
 
 export function calculatePrice(product, isChecked, total) {
-    let priceWithDiscount = Number(product.priceWithDiscount.replace(/\s/g, ''));
-    let price = Number(product.price.replace(/\s/g, ''));
+    const priceWithDiscount = parseInt(product.priceWithDiscount.replace(/\s/g, ''), 10);
+    const price = parseInt(product.price.replace(/\s/g, ''), 10);
+    const productAmount = parseInt(product.count, 10);
+
+    const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
 
     if (isChecked) {
-        total.priceWithoutDiscount += price;
-        total.discount += price - priceWithDiscount;
-        total.totalAmount += priceWithDiscount;
+        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
+        total.discount = parseAndSum(total.discount, price - priceWithDiscount);
+        total.totalAmount = parseAndSum(total.totalAmount, priceWithDiscount);
+        total.totalProducts = parseAndSum(total.totalProducts, productAmount);
     } else {
-        total.priceWithoutDiscount -= price;
-        total.discount -= price - priceWithDiscount;
-        total.totalAmount -= priceWithDiscount;
+        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, -price);
+        total.discount = parseAndSum(total.discount, -(price - priceWithDiscount));
+        total.totalAmount = parseAndSum(total.totalAmount, -priceWithDiscount);
+        total.totalProducts = parseAndSum(total.totalProducts, -productAmount);
     }
 
-    console.log('Total Amount: ', total.totalAmount);
-    console.log('Total Discount: ', total.discount);
-    console.log('Price With Discount: ', total.priceWithoutDiscount);
+    console.log('Product count: ', total.totalProducts);
+    console.log('total.priceWithoutDiscount: ', total.priceWithoutDiscount);
 
     updateTotalPrice(total.totalAmount);
     updateTotalWithoutDiscount(total.priceWithoutDiscount);
     updateTotalDiscount(total.discount);
+    updateTotalProducts(total.totalProducts);
 }

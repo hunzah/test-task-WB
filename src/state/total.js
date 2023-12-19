@@ -1,6 +1,7 @@
 export const total = {
-    totalAmount: 2101063,
-    totalProducts: 203,
-    priceWithoutDiscount:2302003,
-    discount: 200940,
+    totalAmount: '2 101 063',
+    totalProducts: '203',
+    priceWithoutDiscount:'2 302 003',
+    discount: '200 940',
+    currency:'сом'
 }
