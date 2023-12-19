@@ -1,11 +1,12 @@
 import {cards} from '../state/cards.js'
 import {total} from '../state/total.js'
-import {calculatePrice, removeProduct} from "./logic/productCardLogic.js";
+import {calculatePrice, removeProduct, selectAll} from "./logic/productCardLogic.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
     const productList = document.getElementById('cards-list');
     const header = document.querySelector('.accordion-header');
+    const selectAllCheckbox = document.getElementById('choose-all-checkbox')
 
     if (productList) {
         cards.products.forEach(product => {
@@ -20,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <div class="product-info-container">
                     <div class="photo-and-checkbox">
                         <div class="checkbox-container">
-                            <input checked type="checkbox" class="checkbox" id="card-checkbox-${product.id}">
+                            <input checked type="checkbox" class="checkbox cardCheckbox" id="card-checkbox-${product.id}">
                             <label for="card-checkbox-${product.id}" class="custom-checkbox"></label>
                         </div>
                         <span class=${product.size ? 'product-size-mobile-text' : ''}>${product.size || ''}</span>
@@ -97,11 +98,26 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             //choose product logic
             const checkbox = document.getElementById(`card-checkbox-${product.id}`);
-            checkbox.addEventListener('change', function (){
+            checkbox.addEventListener('change', function () {
                 calculatePrice(product, this.checked, total);
+                updateSelectAllCheckboxState()
             })
+
+
+            // Добавляем обработчик события для главного чекбокса
+            selectAllCheckbox.addEventListener('change', function () {
+                const checkboxes = document.querySelectorAll('.cardCheckbox');
+                checkboxes.forEach(checkbox => {
+                    checkbox.checked = selectAllCheckbox.checked;
+                    selectAll(checkbox.checked, total);
+                });
+            });
+            function updateSelectAllCheckboxState() {
+                const checkboxes = document.querySelectorAll('.cardCheckbox');
+                const allChecked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+                selectAllCheckbox.checked = allChecked;
+            }
         });
     }
 });
-
 

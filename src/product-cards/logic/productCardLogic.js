@@ -4,6 +4,7 @@ import {
     updateTotalProducts,
     updateTotalWithoutDiscount
 } from "../../total/updateTotal.js";
+import {cards} from "../../state/cards.js";
 
 
 export function removeProduct(product, listItem, header, cards) {
@@ -19,14 +20,12 @@ export function removeProduct(product, listItem, header, cards) {
     listItem.remove();
 }
 
-
-
+const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
+const stringToNumber = (value) => parseInt(value.replace(/\s/g, ''), 10);
 export function calculatePrice(product, isChecked, total) {
-    const priceWithDiscount = parseInt(product.priceWithDiscount.replace(/\s/g, ''), 10);
-    const price = parseInt(product.price.replace(/\s/g, ''), 10);
+    const priceWithDiscount = stringToNumber(product.priceWithDiscount);
+    const price = stringToNumber(product.price);
     const productAmount = parseInt(product.count, 10);
-
-    const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
 
     if (isChecked) {
         total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
@@ -40,9 +39,31 @@ export function calculatePrice(product, isChecked, total) {
         total.totalProducts = parseAndSum(total.totalProducts, -productAmount);
     }
 
-    console.log('Product count: ', total.totalProducts);
-    console.log('total.priceWithoutDiscount: ', total.priceWithoutDiscount);
+    updateTotalPrice(total.totalAmount);
+    updateTotalWithoutDiscount(total.priceWithoutDiscount);
+    updateTotalDiscount(total.discount);
+    updateTotalProducts(total.totalProducts);
+}
 
+export function selectAll(isChecked, total) {
+    let priceWithoutDiscount = cards.products.reduce((acc,prod) => {
+        return acc += stringToNumber(prod.price)
+    },0 )
+    let totalAmount = cards.products.reduce((acc,prod) => {
+        return acc += stringToNumber(prod.priceWithDiscount)
+    },0 )
+    console.log(priceWithoutDiscount)
+    if (isChecked) {
+        total.priceWithoutDiscount = priceWithoutDiscount;
+        total.discount = '200 940';
+        total.totalAmount = totalAmount;
+        total.totalProducts = 203;
+    } else {
+        total.priceWithoutDiscount = '0';
+        total.discount = '0';
+        total.totalAmount = '0';
+        total.totalProducts = '0';
+    }
     updateTotalPrice(total.totalAmount);
     updateTotalWithoutDiscount(total.priceWithoutDiscount);
     updateTotalDiscount(total.discount);
