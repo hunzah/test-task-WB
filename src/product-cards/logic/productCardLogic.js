@@ -1,13 +1,10 @@
 import {updateTotalState,} from "../../state/updateTotal.js";
 import {cards} from "../../state/cards.js";
 import {formatNumber, parseAndSum, stringToNumber} from "../../tools/tools.js";
-import {updateState} from "../../state/updateCardsState.js";
+import {updateCardState} from "../../state/updateCardsState.js";
 
 
-
-
-
-export function removeProduct(product, listItem, header, total) {
+export function removeProduct(product, listItem, header, total, isChecked) {
     if (cards.products.length === 1 && header) {
         header.remove();
     }
@@ -18,21 +15,19 @@ export function removeProduct(product, listItem, header, total) {
         cards.products.splice(indexToRemove, 1);
 
         // Вызываем updateState с обновленным стейтом
-        updateState({
+        updateCardState({
             products: cards.products,
             notAvailableProducts: cards.notAvailableProducts
         });
 
-        const priceWithDiscount = stringToNumber(product.priceWithDiscount);
-        const price = stringToNumber(product.price);
-        const productAmount = parseInt(product.count, 10);
-        calculateNegativeChanges(total, price, priceWithDiscount, productAmount);
-        updateTotalState(total);
+        if (isChecked) {
+            calculatePrice(product, isChecked, total)
+            updateTotalState(total);
+        }
     }
 
     listItem.remove();
 }
-
 
 
 function calculatePositiveChanges(total, price, priceWithDiscount, productAmount) {
@@ -64,10 +59,10 @@ export function calculatePrice(product, isChecked, total) {
 }
 
 export function selectAll(isChecked, total) {
-    let priceWithoutDiscount = cards.products.reduce((acc,prod) => acc += stringToNumber(prod.price),0 )
+    let priceWithoutDiscount = cards.products.reduce((acc, prod) => acc += stringToNumber(prod.price), 0)
     let totalAmount = cards.products.reduce((acc, prod) => acc + stringToNumber(prod.priceWithDiscount), 0);
     let totalDiscount = priceWithoutDiscount - totalAmount;
-    let totalProducts = cards.products.reduce((acc,prod) => acc += prod.count,0 )
+    let totalProducts = cards.products.reduce((acc, prod) => acc += prod.count, 0)
 
     if (isChecked) {
         total.priceWithoutDiscount = formatNumber(priceWithoutDiscount);

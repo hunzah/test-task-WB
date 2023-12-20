@@ -14,28 +14,24 @@ document.addEventListener('DOMContentLoaded', function () {
     if (productList) {
         cards.products.forEach(product => {
 
-
             const listItem = document.createElement('li');
-            const bigNumber = Number(product.priceWithDiscount.replace(/\s/g, ''));
-
             listItem.classList.add('card');
 
             listItem.innerHTML = productCardTemplate(product);
 
             productList.appendChild(listItem);
-
-            //delete cards logic
-            const trashButton = document.getElementById(`${product.id}-count-button`);
-            trashButton.addEventListener('click', () => {
-                removeProduct(product, listItem, header, total);
-            });
-
-            //choose product logic
             const checkbox = document.getElementById(`card-checkbox-${product.id}`);
+            //choose product logic
             checkbox.addEventListener('change', function () {
                 calculatePrice(product, this.checked, total);
                 updateSelectAllCheckboxState()
             })
+            //delete cards logic
+            const trashButton = document.getElementById(`${product.id}-count-button`);
+            trashButton.addEventListener('click', () => {
+                removeProduct(product, listItem, header, total, checkbox.checked);
+            });
+
             // main checkbox
             selectAllCheckbox.addEventListener('change', function () {
                 const checkboxes = document.querySelectorAll('.cardCheckbox');
