@@ -1,20 +1,33 @@
-import {
-    updateTotalDiscount,
-    updateTotalPrice,
-    updateTotalProducts,
-    updateTotalWithoutDiscount
-} from "../../total/logic/updateTotal.js";
+import {updateTotalState,} from "../../state/updateTotal.js";
 import {cards} from "../../state/cards.js";
-import {formatNumber, stringToNumber} from "../../tools/tools.js";
+import {formatNumber, parseAndSum, stringToNumber} from "../../tools/tools.js";
+import {updateState} from "../../state/updateCardsState.js";
 
-export function removeProduct(product, listItem, header, cards) {
+
+
+
+
+export function removeProduct(product, listItem, header, total) {
     if (cards.products.length === 1 && header) {
         header.remove();
     }
 
     const indexToRemove = cards.products.findIndex(p => p.id === product.id);
     if (indexToRemove !== -1) {
+        // Используем splice для удаления элемента из массива products
         cards.products.splice(indexToRemove, 1);
+
+        // Вызываем updateState с обновленным стейтом
+        updateState({
+            products: cards.products,
+            notAvailableProducts: cards.notAvailableProducts
+        });
+
+        const priceWithDiscount = stringToNumber(product.priceWithDiscount);
+        const price = stringToNumber(product.price);
+        const productAmount = parseInt(product.count, 10);
+        calculateNegativeChanges(total, price, priceWithDiscount, productAmount);
+        updateTotalState(total);
     }
 
     listItem.remove();
@@ -22,28 +35,32 @@ export function removeProduct(product, listItem, header, cards) {
 
 
 
+function calculatePositiveChanges(total, price, priceWithDiscount, productAmount) {
+    total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
+    total.discount = parseAndSum(total.discount, price - priceWithDiscount);
+    total.totalAmount = parseAndSum(total.totalAmount, priceWithDiscount);
+    total.totalProducts = parseAndSum(total.totalProducts, productAmount);
+}
+
+function calculateNegativeChanges(total, price, priceWithDiscount, productAmount) {
+    total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, -price);
+    total.discount = parseAndSum(total.discount, -(price - priceWithDiscount));
+    total.totalAmount = parseAndSum(total.totalAmount, -priceWithDiscount);
+    total.totalProducts = parseAndSum(total.totalProducts, -productAmount);
+}
+
 export function calculatePrice(product, isChecked, total) {
     const priceWithDiscount = stringToNumber(product.priceWithDiscount);
     const price = stringToNumber(product.price);
     const productAmount = parseInt(product.count, 10);
 
-    const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
     if (isChecked) {
-        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
-        total.discount = parseAndSum(total.discount, price - priceWithDiscount);
-        total.totalAmount = parseAndSum(total.totalAmount, priceWithDiscount);
-        total.totalProducts = parseAndSum(total.totalProducts, productAmount);
+        calculatePositiveChanges(total, price, priceWithDiscount, productAmount);
     } else {
-        total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, -price);
-        total.discount = parseAndSum(total.discount, -(price - priceWithDiscount));
-        total.totalAmount = parseAndSum(total.totalAmount, -priceWithDiscount);
-        total.totalProducts = parseAndSum(total.totalProducts, -productAmount);
+        calculateNegativeChanges(total, price, priceWithDiscount, productAmount);
     }
 
-    updateTotalPrice(total.totalAmount);
-    updateTotalWithoutDiscount(total.priceWithoutDiscount);
-    updateTotalDiscount(total.discount);
-    updateTotalProducts(total.totalProducts);
+    updateTotalState(total);
 }
 
 export function selectAll(isChecked, total) {
@@ -63,11 +80,10 @@ export function selectAll(isChecked, total) {
         total.totalAmount = '0';
         total.totalProducts = '0';
     }
-    updateTotalPrice(total.totalAmount);
-    updateTotalWithoutDiscount(total.priceWithoutDiscount);
-    updateTotalDiscount(total.discount);
-    updateTotalProducts(total.totalProducts);
+    updateTotalState(total);
 }
+
+
 export function updateSelectAllCheckboxState() {
     const checkboxes = document.querySelectorAll('.cardCheckbox');
     const selectAllCheckbox = document.getElementById('choose-all-checkbox');

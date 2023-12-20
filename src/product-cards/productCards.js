@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             //delete cards logic
             const trashButton = document.getElementById(`${product.id}-count-button`);
             trashButton.addEventListener('click', () => {
-                removeProduct(product, listItem, header, cards);
+                removeProduct(product, listItem, header, total);
             });
 
             //choose product logic
