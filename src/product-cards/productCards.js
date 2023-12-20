@@ -1,5 +1,5 @@
-import {cards} from '../state/cards.js'
-import {total} from '../state/total.js'
+import {cards} from '../state/cards/cards.js'
+import {total} from '../state/total/total.js'
 import {calculatePrice, removeProduct, selectAll, updateSelectAllCheckboxState} from "./logic/productCardLogic.js";
 import {productCardTemplate} from "./templates/prodCardsTemplate.js";
 import {cardInfoTooltip} from "../tooltips/cardInfoTooltip.js";

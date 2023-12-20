@@ -1,4 +1,4 @@
-import {cards} from '../state/cards.js'
+import {cards} from '../state/cards/cards.js'
 import {removeNotAvailableProduct} from "./logic/notAviableProductLogic.js";
 import {notAvailableCardTemplate} from "./templates/notAviableCardsTemplate.js";
 

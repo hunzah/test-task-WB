@@ -129,6 +129,103 @@
 }
 
 
+/*modals*/
+.change-pay-method-container {
+    position: fixed;
+    z-index: 1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    width: 400px;
+    background-color: var(--color-white);
+    border-radius: 16px;
+    background: var(--color-white);
+    box-shadow: 0 4px 10px 0 var(--color-shadow-light);
+}
+
+.pay-method-modal-title-container {
+    display: flex;
+    padding: 16px 24px 13px 24px;
+    align-items: flex-start;
+    align-self: stretch;
+    justify-content: space-between;
+}
+
+.pay-method-modal-title {
+    color: var(--color-black);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+.close-modal-icon:hover {
+    cursor: pointer;
+}
+
+.modal-pay-cards-container {
+    display: flex;
+    padding: 0 22px 123px 22px;
+    flex-direction: column;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.modal-pay-card {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.change-pay-method-set-button-wrap {
+    display: flex;
+    padding: 16px 24px 24px 24px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    align-self: stretch;
+}
+
+.change-pay-method-set-button {
+    height: 44px;
+    padding: 0 48px 5px 48px;
+    border-radius: 8px;
+    background-color: var(--color-pink);
+
+    color: var(--color-white);
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+
+    &:hover {
+        cursor: pointer;
+        background-color: var(--color-light-pink);
+    }
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+body.overlay-open {
+    overflow: hidden;
+}
+
 /*css*/
 body {
     font-family: SegoeUI, Arial, sans-serif;
@@ -772,6 +869,7 @@ button {
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
+
     &:hover {
         cursor: pointer;
     }

@@ -1,7 +1,7 @@
-import {updateTotalState,} from "../../state/updateTotal.js";
-import {cards} from "../../state/cards.js";
+import {updateTotalState,} from "../../state/total/updateTotal.js";
+import {cards} from "../../state/cards/cards.js";
 import {formatNumber, parseAndSum, stringToNumber} from "../../tools/tools.js";
-import {updateCardState} from "../../state/updateCardsState.js";
+import {updateCardState} from "../../state/cards/updateCardsState.js";
 
 
 export function removeProduct(product, listItem, header, total, isChecked) {

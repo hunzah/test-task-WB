@@ -1,4 +1,4 @@
-import {total} from '../state/total.js'
+import {total} from '../state/total/total.js'
 import {totalTemplate} from "./template/totalTemplate.js";
 import {returnDeliveryTooltip} from "../tooltips/returnDeliveryTooltip.js";
 

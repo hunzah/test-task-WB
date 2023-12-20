@@ -49,12 +49,12 @@ export function totalTemplate(total) {
                     <div class="total-pay-card-header">
                         <div class="total-pay-card-header-container">
                             <span class="total-pay-title-text">Оплата картой</span>
-                            <button>
+                            <button class="delivery-method-header-button" id="total-change-pay-method">
                                 <img src="assets/icons/change-icon.svg" alt="change-icon">
                             </button>
                         </div>
                         <div class="total-pay-card-info-container">
-                            <img src="assets/icons/mir-card.svg" alt="mir-card">
+                            <img src="/assets/icons/pay-method/mir-card.svg" alt="mir-card">
                             <span class="total-pay-card-numbers">1234 12•• •••• 1234</span>
                         </div>
                     </div>

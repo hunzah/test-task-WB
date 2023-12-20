@@ -1,4 +1,4 @@
-import {total} from '/src/state/total.js'
+import {total} from '/src/state/total/total.js'
 
 function toggleContentVisibility2() {
     const accordionButton = document.getElementById('not-available-accordion-arrow-button');
