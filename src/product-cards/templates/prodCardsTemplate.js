@@ -71,8 +71,9 @@ export function productCardTemplate(product) {
                             ${product.priceWithDiscount}</span>
                         <span class="total-price-currency">${product.currency}</span>
                     </div>
-                    <span class="total-price-discount-number">${product.price} ${product.currency}</span>
+                    <span id="discount-text-${product.id}" class="total-price-discount-number">${product.price} ${product.currency}</span>
                 </div>
+
             </div>
     `;
 }

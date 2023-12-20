@@ -3,6 +3,7 @@ import {total} from '../state/total.js'
 import {calculatePrice, removeProduct, selectAll, updateSelectAllCheckboxState} from "./logic/productCardLogic.js";
 import {productCardTemplate} from "./templates/prodCardsTemplate.js";
 import {cardInfoTooltip} from "../tooltips/cardInfoTooltip.js";
+import {discountInfoTooltip} from "../tooltips/discountInfoTooltip.js";
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             //tooltip
             cardInfoTooltip(product)
+            discountInfoTooltip(product)
         });
     }
 });
