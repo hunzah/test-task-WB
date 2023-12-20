@@ -5,7 +5,7 @@ import {
     updateTotalWithoutDiscount
 } from "../../total/logic/updateTotal.js";
 import {cards} from "../../state/cards.js";
-import {stringToNumber, formatNumber} from "../../tools/tools.js";
+import {formatNumber, stringToNumber} from "../../tools/tools.js";
 
 export function removeProduct(product, listItem, header, cards) {
     if (cards.products.length === 1 && header) {
@@ -51,7 +51,7 @@ export function selectAll(isChecked, total) {
     let totalAmount = cards.products.reduce((acc, prod) => acc + stringToNumber(prod.priceWithDiscount), 0);
     let totalDiscount = priceWithoutDiscount - totalAmount;
     let totalProducts = cards.products.reduce((acc,prod) => acc += prod.count,0 )
-    console.log(priceWithoutDiscount)
+
     if (isChecked) {
         total.priceWithoutDiscount = formatNumber(priceWithoutDiscount);
         total.discount = formatNumber(totalDiscount);
@@ -70,5 +70,11 @@ export function selectAll(isChecked, total) {
 }
 export function updateSelectAllCheckboxState() {
     const checkboxes = document.querySelectorAll('.cardCheckbox');
-    selectAllCheckbox.checked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+    const selectAllCheckbox = document.getElementById('choose-all-checkbox');
+
+    if (checkboxes.length > 0) {
+        selectAllCheckbox.checked = Array.from(checkboxes).every(checkbox => checkbox.checked);
+    } else {
+        selectAllCheckbox.checked = false;
+    }
 }
