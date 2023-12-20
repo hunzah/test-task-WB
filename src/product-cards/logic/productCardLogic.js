@@ -21,12 +21,17 @@ export function removeProduct(product, listItem, header, total, isChecked) {
         });
 
         if (isChecked) {
-            calculatePrice(product, isChecked, total)
+            const priceWithDiscount = stringToNumber(product.priceWithDiscount);
+            const price = stringToNumber(product.price);
+            const productAmount = parseInt(product.count, 10);
+            calculateNegativeChanges(total, price, priceWithDiscount, productAmount)
             updateTotalState(total);
+
         }
     }
 
     listItem.remove();
+    updateSelectAllCheckboxState()
 }
 
 
