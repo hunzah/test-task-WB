@@ -8,6 +8,11 @@ export const cards = {
             size: '56',
             address: 'Каледино WB',
             companyName: 'OOO Вайлдберриз',
+            companyInfo: {
+                title: 'OOO «ВАЙЛДБЕРРИЗ»',
+                regNumber: 'ОГРН: 5167746237148',
+                address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+            },
             price: '1051', priceWithDiscount: '522',
             currency: 'сом',
             count: 1,
@@ -20,6 +25,11 @@ export const cards = {
             color: 'прозрачный',
             address: 'Каледино WB',
             companyName: 'OOO Мегапрофстиль',
+            companyInfo: {
+                title: 'OOO «МЕГАПРОФСТИЛЬ»',
+                regNumber: 'ОГРН: 5167746237148',
+                address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+            },
             price: '2 300 047',
             priceWithDiscount: '2 100 047',
             currency: 'сом',
@@ -32,6 +42,11 @@ export const cards = {
             name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell',
             address: 'Каледино WB',
             companyName: 'OOO Вайлдберриз',
+            companyInfo: {
+                title: 'OOO «ВАЙЛДБЕРРИЗ»',
+                regNumber: 'ОГРН: 5167746237148',
+                address: '129337, Москва, улица Красная Сосна, 2, корпус 1, стр. 1, помещение 2, офис 34'
+            },
             price: '905',
             priceWithDiscount: '494',
             currency: 'сом',

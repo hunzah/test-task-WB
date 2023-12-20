@@ -50,6 +50,51 @@
     transform: rotate(180deg);
 }
 
+/*tooltips */
+.tooltip {
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    border-radius: 8px;
+    background: var(--color-white);
+    box-shadow: 0 0 1px 0 var(--color-shadow), 0 2px 10px 0 var(--color-shadow-light);
+}
+
+.return-delivery-tooltip {
+    top: 20px;
+    left: 50%;
+    width: 288px;
+    padding: 10px 16px 14px 16px;
+}
+
+.return-delivery-tooltip-total {
+    top: 36px;
+    width: 288px;
+    padding: 10px 16px 14px 16px;
+}
+
+.card-info-tooltip {
+    top:26px;
+    width: 280px;
+    padding: 11px 16px;
+}
+
+.tooltip-title {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+
+}
+
+.tooltip-text {
+    font-size: 13px;
+    font-weight: 400;
+    line-height: 16px;
+}
+
 /*css*/
 body {
     font-family: SegoeUI, Arial, sans-serif;
@@ -463,7 +508,9 @@ button {
     font-weight: 400;
     line-height: 24px;
 }
-
+.info-icon:hover {
+    cursor: pointer;
+}
 .product-name-text-mobile {
     display: none;
 }
@@ -493,6 +540,12 @@ button {
     align-items: flex-start;
     gap: 4px;
     align-self: stretch;
+}
+
+.address-name-info-container {
+    position: relative;
+    display: flex;
+    gap: 6px;
 }
 
 .count-and-price-container {
@@ -603,13 +656,15 @@ button {
 
 .like-button {
     cursor: pointer;
-    .like-icon:hover{
+
+    .like-icon:hover {
         fill: var(--color-pink);
     }
 }
 
 .trash-button:hover {
     cursor: pointer;
+
     .trash-icon path {
         fill: var(--color-orange);
     }
@@ -899,10 +954,14 @@ button {
 }
 
 .return-delivery-text, .return-delivery-text-green {
+    position: relative;
     align-self: stretch;
     font-size: 13px;
     font-weight: 400;
     line-height: 16px;
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .return-delivery-text-green {

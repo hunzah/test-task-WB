@@ -3,9 +3,9 @@ import {
     updateTotalPrice,
     updateTotalProducts,
     updateTotalWithoutDiscount
-} from "../../total/updateTotal.js";
+} from "../../total/logic/updateTotal.js";
 import {cards} from "../../state/cards.js";
-
+import {stringToNumber, formatNumber} from "../../tools/tools.js";
 
 export function removeProduct(product, listItem, header, cards) {
     if (cards.products.length === 1 && header) {
@@ -20,13 +20,14 @@ export function removeProduct(product, listItem, header, cards) {
     listItem.remove();
 }
 
-const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
-const stringToNumber = (value) => parseInt(value.replace(/\s/g, ''), 10);
+
+
 export function calculatePrice(product, isChecked, total) {
     const priceWithDiscount = stringToNumber(product.priceWithDiscount);
     const price = stringToNumber(product.price);
     const productAmount = parseInt(product.count, 10);
 
+    const parseAndSum = (value, addition) => (parseInt(value.replace(/\s/g, ''), 10) + addition).toLocaleString();
     if (isChecked) {
         total.priceWithoutDiscount = parseAndSum(total.priceWithoutDiscount, price);
         total.discount = parseAndSum(total.discount, price - priceWithDiscount);
@@ -46,18 +47,16 @@ export function calculatePrice(product, isChecked, total) {
 }
 
 export function selectAll(isChecked, total) {
-    let priceWithoutDiscount = cards.products.reduce((acc,prod) => {
-        return acc += stringToNumber(prod.price)
-    },0 )
-    let totalAmount = cards.products.reduce((acc,prod) => {
-        return acc += stringToNumber(prod.priceWithDiscount)
-    },0 )
+    let priceWithoutDiscount = cards.products.reduce((acc,prod) => acc += stringToNumber(prod.price),0 )
+    let totalAmount = cards.products.reduce((acc, prod) => acc + stringToNumber(prod.priceWithDiscount), 0);
+    let totalDiscount = priceWithoutDiscount - totalAmount;
+    let totalProducts = cards.products.reduce((acc,prod) => acc += prod.count,0 )
     console.log(priceWithoutDiscount)
     if (isChecked) {
-        total.priceWithoutDiscount = priceWithoutDiscount;
-        total.discount = '200 940';
-        total.totalAmount = totalAmount;
-        total.totalProducts = 203;
+        total.priceWithoutDiscount = formatNumber(priceWithoutDiscount);
+        total.discount = formatNumber(totalDiscount);
+        total.totalAmount = formatNumber(totalAmount);
+        total.totalProducts = formatNumber(totalProducts);
     } else {
         total.priceWithoutDiscount = '0';
         total.discount = '0';
@@ -68,4 +67,8 @@ export function selectAll(isChecked, total) {
     updateTotalWithoutDiscount(total.priceWithoutDiscount);
     updateTotalDiscount(total.discount);
     updateTotalProducts(total.totalProducts);
+}
+export function updateSelectAllCheckboxState() {
+    const checkboxes = document.querySelectorAll('.cardCheckbox');
+    selectAllCheckbox.checked = Array.from(checkboxes).every(checkbox => checkbox.checked);
 }

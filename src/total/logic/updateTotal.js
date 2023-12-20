@@ -1,4 +1,4 @@
-import {total} from '../state/total.js'
+import {total} from '../../state/total.js'
 
 export function updateTotalPrice(value) {
     const totalPriceElement = document.querySelector('.total-info-price-text');

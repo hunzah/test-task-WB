@@ -33,7 +33,7 @@ function toggleContentVisibility() {
             if (cardsContainer.style.display === 'none') {
                 cardsContainer.style.display = 'flex';
 
-                checkbox.innerHTML = '<input type="checkbox" class="checkbox" id="choose-all-checkbox">' +
+                checkbox.innerHTML = '<input checked type="checkbox" class="checkbox" id="choose-all-checkbox">' +
                     '<label for="choose-all-checkbox" class="custom-checkbox-label"></label>' +
                     '<span class="choose-all-checkbox-text">Выбрать все</span>';
                 accordionButton.classList.remove('rotate');
