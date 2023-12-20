@@ -17,6 +17,10 @@ export const cards = {
             currency: 'сом',
             count: 1,
             left: 2,
+            discount:'40%',
+            buyerDiscount: "10%",
+            discountValue: '419',
+            buyerDiscountValue: '109',
         },
         {
             id: 2,
@@ -35,6 +39,10 @@ export const cards = {
             currency: 'сом',
             count: 200,
             left: 200,
+            discount:'5%',
+            buyerDiscount: "4.4%",
+            discountValue: '111 034',
+            buyerDiscountValue: '89 013',
         },
         {
             id: 3,
@@ -52,9 +60,10 @@ export const cards = {
             currency: 'сом',
             count: 2,
             left: 2,
-            iconUrl: "/img/delivery/pencils-icon.png",
-
-
+            discount:'30%',
+            buyerDiscount: "10%",
+            discountValue: '313',
+            buyerDiscountValue: '96',
         },
     ],
     notAvailableProducts: [

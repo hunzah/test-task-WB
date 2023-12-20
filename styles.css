@@ -99,9 +99,10 @@
     display: flex;
     top: 36px;
     z-index: 1;
-    padding: 11px 16px 13px 16px;
     align-items: flex-start;
     gap: 8px;
+
+    padding: 11px 16px 13px 16px;
     background: var(--color-white);
     box-shadow: 0 0 1px 0 var(--color-shadow), 0 2px 10px 0 var(--color-shadow-light);
     border-radius: 8px;
@@ -115,6 +116,7 @@
 }
 
 .tooltip-discount-text, .tooltip-discount-sec-text {
+    white-space: nowrap;
     color: var(--color-black);
     font-size: 13px;
     font-style: normal;
