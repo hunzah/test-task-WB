@@ -1,4 +1,7 @@
-export function totalTemplate(total) {
+import {payMethod} from "../../state/pay-method/payMethod.js";
+import {total} from "../../state/total/total.js";
+
+export function totalTemplate() {
     return `
     <div class="total-info-container">
                     <div class="total-info-price-container">
@@ -54,8 +57,8 @@ export function totalTemplate(total) {
                             </button>
                         </div>
                         <div class="total-pay-card-info-container">
-                            <img src="/assets/icons/pay-method/mir-card.svg" alt="mir-card">
-                            <span class="total-pay-card-numbers">1234 12•• •••• 1234</span>
+                            <img src="${payMethod.selectedCard.img}" alt="bank-card">
+                            <span class="total-pay-card-numbers">${payMethod.selectedCard.number}</span>
                         </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">

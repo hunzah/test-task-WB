@@ -11,7 +11,7 @@ export function changePayMethodModalTemplate() {
                 ${cardInfo()}
             </div>
             <div class="change-pay-method-set-button-wrap">
-                <button class="change-pay-method-set-button">Выбрать</button>
+                <button id="set-pay-card-button" class="change-pay-method-set-button">Выбрать</button>
             </div>
         </div>
     `;

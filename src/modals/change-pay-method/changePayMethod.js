@@ -1,9 +1,11 @@
-import { changePayMethodModalTemplate } from "./changePayMethodTemplate.js";
-import { payMethod } from "../../state/pay-method/payMethod.js";
-import { payMethodTemplate } from "../../pay-method/template/payMethodTemplate.js";
+import {changePayMethodModalTemplate} from "./changePayMethodTemplate.js";
+import {payMethod} from "../../state/pay-method/payMethod.js";
+import {payMethodTemplate} from "../../pay-method/template/payMethodTemplate.js";
+import {totalTemplate} from "../../total/template/totalTemplate.js";
 
 document.addEventListener('DOMContentLoaded', function () {
-    const paymentContainer = document.getElementById('payment-container');
+    const paymentContainer = document.getElementById('payment-method-main');
+    const totalContainer = document.querySelector('.total-container');
     const modalTemplate = changePayMethodModalTemplate();
 
     const overlay = document.createElement('div');
@@ -16,9 +18,9 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.appendChild(overlay);
     document.body.appendChild(modalContainer);
 
-    const openModalButton = document.getElementById('total-change-pay-method');
+    const openModalButton = document.getElementById('change-payment-method-button');
     const closeModalButton = document.getElementById('close-change-pay-method-modal-button');
-    const chooseButton = modalContainer.querySelector('.change-pay-method-set-button');
+    const chooseButton = document.getElementById('set-pay-card-button');
     const radioButtons = modalContainer.querySelectorAll('input[name="paymentCard"]');
 
     let selectedCardIndex = null;
@@ -49,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (selectedCardIndex !== null) {
             payMethod.selectedCard = { ...payMethod.cards[selectedCardIndex] };
             paymentContainer.innerHTML = payMethodTemplate();
+            totalContainer.innerHTML = totalTemplate();
         }
 
         overlay.style.display = 'none';
