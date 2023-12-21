@@ -20,7 +20,7 @@ export function changePayMethodModalTemplate() {
 function cardInfo() {
     return payMethod.cards.map((card, index) => `
         <div class="modal-pay-card">
-            <label>
+            <label class="select-card-radio">
                 <input type="radio" name="paymentCard" value="${index}" />
             </label>
             <div>

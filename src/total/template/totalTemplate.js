@@ -3,7 +3,8 @@ import {total} from "../../state/total/total.js";
 
 export function totalTemplate() {
     return `
-    <div class="total-info-container">
+        <div class="total-content">
+            <div class="total-info-container">
                     <div class="total-info-price-container">
                         <div class="total-info-price-header">
                             <span class="total-info-title-text">Итого</span>
@@ -58,7 +59,7 @@ export function totalTemplate() {
                         </div>
                         <div class="total-pay-card-info-container">
                             <img src="${payMethod.selectedCard.img}" alt="bank-card">
-                            <span class="total-pay-card-numbers">${payMethod.selectedCard.number}</span>
+                            <span class="total-pay-card-numbers">1234 12•• •••• 1234</span>
                         </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">
@@ -77,5 +78,6 @@ export function totalTemplate() {
                     </div>
                 </div>
             </div>
+        </div>
     `
 }

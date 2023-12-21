@@ -15,6 +15,8 @@ document.addEventListener('DOMContentLoaded', function () {
     modalContainer.innerHTML = modalTemplate;
     modalContainer.style.display = 'none';
 
+
+
     document.body.appendChild(overlay);
     document.body.appendChild(modalContainer);
 

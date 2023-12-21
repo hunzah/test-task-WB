@@ -222,9 +222,51 @@
     background-color: rgba(0, 0, 0, 0.5);
     overflow: hidden;
 }
+
 body.overlay-open {
     overflow: hidden;
 }
+
+
+/*select*/
+.select-card-radio {
+    width: 20px;
+    height: 20px;
+}
+
+.select-card-radio input {
+    appearance: none;
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.select-card-radio input[type="radio"] {
+    appearance: none;
+    margin: 0;
+
+    &:hover {
+        cursor: pointer;
+        border-color: #595959;
+    }
+}
+
+.select-card-radio input[type="radio"]:checked {
+    border-color: transparent;
+}
+
+.select-card-radio input[type="radio"]::before {
+    content: url('/assets/icons/select-radio-unchecked-icon-20.svg');
+    background-size: contain;
+    transform: scale(1);
+    transition: 120ms transform ease-in-out;
+}
+
+.select-card-radio input[type="radio"]:checked::before {
+    content: url('/assets/icons/select-radio-checked-icon-20.svg');
+    transform: scale(1);
+    border-color: transparent;
+}
+
 
 /*css*/
 body {
