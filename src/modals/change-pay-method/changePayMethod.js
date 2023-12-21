@@ -28,6 +28,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectedCardIndex = null;
 
+
+
     function openModal() {
         overlay.style.display = 'block';
         modalContainer.style.display = 'block';

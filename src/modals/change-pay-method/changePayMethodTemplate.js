@@ -1,4 +1,4 @@
-import { payMethod } from "../../state/pay-method/payMethod.js";
+import {payMethod} from "../../state/pay-method/payMethod.js";
 
 export function changePayMethodModalTemplate() {
     return `
@@ -18,10 +18,12 @@ export function changePayMethodModalTemplate() {
 }
 
 function cardInfo() {
+    const selectedCardIndex = payMethod.cards.findIndex(card => card.number === payMethod.selectedCard.number);
+    console.log(selectedCardIndex)
     return payMethod.cards.map((card, index) => `
         <div class="modal-pay-card">
             <label class="select-card-radio">
-                <input type="radio" name="paymentCard" value="${index}" />
+                <input type="radio" name="paymentCard" value="${index}" ${selectedCardIndex === index ? 'checked' : ''} />
             </label>
             <div>
                 <img src="${card.img}" alt="close-icon"/>
@@ -30,4 +32,6 @@ function cardInfo() {
         </div>
     `).join('');
 }
+
+
 
