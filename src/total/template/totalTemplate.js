@@ -53,14 +53,13 @@ export function totalTemplate() {
                     <div class="total-pay-card-header">
                         <div class="total-pay-card-header-container">
                             <span class="total-pay-title-text">Оплата картой</span>
-                            <button class="delivery-method-header-button" id="total-change-pay-method">
+                            <button class="delivery-method-header-button" id="total-change-pay-method-modal">
                                 <img src="assets/icons/change-icon.svg" alt="change-icon">
                             </button>
                         </div>
                         <div class="total-pay-card-info-container">
-                            <img src="${payMethod.selectedCard.img}" alt="bank-card">
-                            <span class="total-pay-card-numbers">1234 12•• •••• 1234</span>
-                        </div>
+                            ${generatePaymentCardInfo()}
+                            </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">
                         <div class="pick-all-checkbox-container">
@@ -80,4 +79,11 @@ export function totalTemplate() {
             </div>
         </div>
     `
+}
+
+export function generatePaymentCardInfo() {
+    return `
+            <img src="${payMethod.selectedCard.img}" alt="bank-card">
+            <span class="total-pay-card-numbers">${payMethod.selectedCard.number}</span>
+    `;
 }
