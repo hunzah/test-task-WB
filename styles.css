@@ -130,7 +130,7 @@
 
 
 /*modals*/
-.change-pay-method-container {
+.change-pay-method-container, .change-pick-up-point-modal-container {
     position: fixed;
     z-index: 1;
     top: 50%;
@@ -148,7 +148,11 @@
     box-shadow: 0 4px 10px 0 var(--color-shadow-light);
 }
 
-.pay-method-modal-title-container {
+.change-pick-up-point-modal-container {
+    width: 500px;
+}
+
+.pay-method-modal-title-container, .change-pick-up-point-modal-title-container {
     display: flex;
     padding: 16px 24px 13px 24px;
     align-items: flex-start;
@@ -156,7 +160,7 @@
     justify-content: space-between;
 }
 
-.pay-method-modal-title {
+.pay-method-modal-title, .change-pick-up-point-modal-title {
     color: var(--color-black);
     font-size: 20px;
     font-style: normal;
@@ -177,14 +181,79 @@
     align-self: stretch;
 }
 
+.modal-pick-points-container {
+    display: flex;
+    padding-bottom: 33px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+
+.points-and-buttons-container {
+    display: flex;
+    padding: 0 22px;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    align-self: stretch;
+}
+
+.points-buttons-container {
+    display: flex;
+    gap: 8px;
+}
+
+.point-button, .courier-button {
+    display: flex;
+    padding-bottom: 2px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    width: 224px;
+    height: 36px;
+    border-radius: 20px;
+    border: 2px solid rgba(203, 17, 171, 0.15);
+
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 16px;
+
+    &:hover{
+        cursor: pointer;
+        border-color: var(--color-pink);
+    }
+}
+
+.points-title {
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 16px;
+}
+
 .modal-pay-card {
     display: flex;
     align-items: center;
     justify-content: flex-start;
     gap: 8px;
 }
+.pick-up-points-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    align-self: stretch;
+}
+.pick-up-point-text {
 
-.change-pay-method-set-button-wrap {
+    font-weight: 400;
+    line-height: 24px;
+    width: 100%;
+}
+
+.change-pay-method-set-button-wrap, .change-pick-up-point-set-button-wrap {
     display: flex;
     padding: 16px 24px 24px 24px;
     flex-direction: column;
@@ -193,7 +262,7 @@
     align-self: stretch;
 }
 
-.change-pay-method-set-button {
+.change-pay-method-set-button, .change-pick-up-point-set-button {
     height: 44px;
     padding: 0 48px 5px 48px;
     border-radius: 8px;
@@ -229,18 +298,18 @@ body.overlay-open {
 
 
 /*select*/
-.select-card-radio {
+.select-radio {
     width: 20px;
     height: 20px;
 }
 
-.select-card-radio input {
+.select-radio input {
     appearance: none;
     -webkit-appearance: none;
     margin: 0;
 }
 
-.select-card-radio input[type="radio"] {
+.select-radio input[type="radio"] {
     appearance: none;
     margin: 0;
 
@@ -250,18 +319,18 @@ body.overlay-open {
     }
 }
 
-.select-card-radio input[type="radio"]:checked {
+.select-radio input[type="radio"]:checked {
     border-color: transparent;
 }
 
-.select-card-radio input[type="radio"]::before {
+.select-radio input[type="radio"]::before {
     content: url('/assets/icons/select-radio-unchecked-icon-20.svg');
     background-size: contain;
     transform: scale(1);
     transition: 120ms transform ease-in-out;
 }
 
-.select-card-radio input[type="radio"]:checked::before {
+.select-radio input[type="radio"]:checked::before {
     content: url('/assets/icons/select-radio-checked-icon-20.svg');
     transform: scale(1);
     border-color: transparent;
@@ -2168,6 +2237,19 @@ button {
         color: var(--color-white);
     }
 
+    /*modals*/
+    .change-pay-method-container, .change-pick-up-point-modal-container {
+
+        width: 100%;
+    }
+
+    .change-pay-method-set-button {
+        width: 100%;
+    }
+    .points-buttons-container {
+        display: flex;
+        justify-content: space-between;
+    }
 }
 
 
