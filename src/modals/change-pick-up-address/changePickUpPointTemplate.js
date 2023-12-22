@@ -5,7 +5,7 @@ export function changePickUpPointModalTemplate() {
     <div class="change-pick-up-point-modal-container">
         <div class="change-pick-up-point-modal-title-container">
             <span class="change-pick-up-point-modal-title">Способ Доставки</span>
-            <img id="close-change-pick-up-point-modal-button" class="close-modal-icon" src="/assets/icons/pay-method/close-icon.svg" alt="close-icon"/>
+            <img id="close-change-pick-up-point-modal-button" class="close-modal-icon" src="../../../assets/icons/pay-method/close-icon.svg" alt="close-icon"/>
         </div>
         <div class="points-and-buttons-container">
             <div class="points-buttons-container">

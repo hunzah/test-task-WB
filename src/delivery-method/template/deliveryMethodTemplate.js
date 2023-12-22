@@ -16,19 +16,19 @@ export function deliveryMethodTemplate() {
             <div class="delivery-date">
                 <span class="delivery-pick-up-date-point-text">5—6 февраля</span>
                 <div class="delivery-goods-images-container-mobile">
-                    <img class="goods-image" src="assets/images/card-photo-2.png"
+                    <img class="goods-image" src="../../../assets/images/card-photo-2.png"
                          alt="goods-image"/>
                     <div class="delivery-goods-image-container">
                         <div class="delivery-goods-image-container">
                             <span class="product-count-on-image-text">184</span>
-                            <img class="goods-image" src="assets/images/card-photo-1.png"
+                            <img class="goods-image" src="../../../assets/images/card-photo-1.png"
                                  alt="goods-image"/>
                         </div>
                     </div>
                     <div class="delivery-goods-image-container">
                         <div class="delivery-goods-image-container">
                             <span class="product-count-on-image-text">2</span>
-                            <img class="goods-image" src="assets/images/card-photo-3.png"
+                            <img class="goods-image" src="../../../assets/images/card-photo-3.png"
                                  alt="goods-image"/>
                         </div>
                     </div>
@@ -40,7 +40,7 @@ export function deliveryMethodTemplate() {
                     <div class="delivery-goods-images-container-mobile">
                         <div class="delivery-goods-image-container">
                             <span class="product-count-on-image-text">16</span>
-                            <img class="goods-image" src="assets/images/card-photo-1.png"
+                            <img class="goods-image" src="../../../assets/images/card-photo-1.png"
                                  alt="goods-image"/>
                         </div>
                     </div>
@@ -57,17 +57,17 @@ export function deliveryMethodTemplate() {
             <div class="delivery-date-expanded">
                 <div class="delivery-goods-images-container">
                     <div class="delivery-goods-image-container">
-                        <img class="goods-image" src="assets/images/card-photo-2.png"
+                        <img class="goods-image" src="../../../assets/images/card-photo-2.png"
                              alt="goods-image"/>
                     </div>
                     <div class="delivery-goods-image-container">
                         <span class="product-count-on-image-text">184</span>
-                        <img class="goods-image" src="assets/images/card-photo-1.png"
+                        <img class="goods-image" src="../../../assets/images/card-photo-1.png"
                              alt="goods-image"/>
                     </div>
                     <div class="delivery-goods-image-container">
                         <span class="product-count-on-image-text">2</span>
-                        <img class="goods-image" src="assets/images/card-photo-3.png"
+                        <img class="goods-image" src="../../../assets/images/card-photo-3.png"
                              alt="goods-image"/>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ export function deliveryMethodTemplate() {
                 <div class="delivery-goods-images-container">
                     <div class="delivery-goods-image-container">
                         <span class="product-count-on-image-text">16</span>
-                        <img class="goods-image" src="assets/images/card-photo-1.png"
+                        <img class="goods-image" src="../../../assets/images/card-photo-1.png"
                              alt="goods-image"/>
                     </div>
                 </div>
