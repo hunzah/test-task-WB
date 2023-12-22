@@ -26,7 +26,7 @@ function cardInfo() {
                 <input type="radio" name="paymentCard" value="${index}" ${0 === index ? 'checked' : ''} />
             </label>
             <div>
-                <img src="./../../../assets/icons/pay-method/mir-card.svg" alt="close-icon"/>
+                <img src="${card.img}" alt="close-icon"/>
                 <span>${card.number}</span>
             </div>
         </div>
