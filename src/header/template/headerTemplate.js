@@ -5,7 +5,7 @@ export function headerTemplate() {
     const cardsValue = cards.products.length
     return `
 <span class="header-basket-goods-count-text">${cardsValue}</span>
-<img src={img} alt="profile-icon"/>
+<img src="https://hunzah.github.io/test-task-WB/assets/icons/mobile/basket-icon.svg" alt="profile-icon"/>
 <span class="header-basket-text">Корзина</span>
    `
 }
