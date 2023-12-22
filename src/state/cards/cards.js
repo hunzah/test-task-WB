@@ -2,7 +2,7 @@ export const cards = {
     products: [
         {
             id: 1,
-            img: '../../assets/images/card-photo-2.png',
+            img: './assets/images/card-photo-2.png',
             name: 'Футболка UZcotton мужская',
             color: 'белый',
             size: '56',
@@ -24,7 +24,7 @@ export const cards = {
         },
         {
             id: 2,
-            img: '../../assets/images/card-photo-1.png',
+            img: './assets/images/card-photo-1.png',
             name: 'Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe',
             color: 'прозрачный',
             address: 'Каледино WB',
@@ -46,7 +46,7 @@ export const cards = {
         },
         {
             id: 3,
-            img: '../../assets/images/card-photo-3.png',
+            img: './assets/images/card-photo-3.png',
             name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные,Faber-Castell',
             address: 'Каледино WB',
             companyName: 'OOO Вайлдберриз',
