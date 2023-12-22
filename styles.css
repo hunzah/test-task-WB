@@ -221,7 +221,7 @@
     font-weight: 700;
     line-height: 16px;
 
-    &:hover{
+    &:hover {
         cursor: pointer;
         border-color: var(--color-pink);
     }
@@ -240,12 +240,14 @@
     justify-content: flex-start;
     gap: 8px;
 }
+
 .pick-up-points-wrap {
     display: flex;
     align-items: flex-start;
     gap: 8px;
     align-self: stretch;
 }
+
 .pick-up-point-text {
 
     font-weight: 400;
@@ -921,8 +923,10 @@ button {
             fill: var(--color-orange);
         }
     }
+
     &:disabled {
         cursor: default;
+
         .trash-icon path {
             fill: var(--color-light-black);
 
@@ -1907,7 +1911,6 @@ button {
 
     .photo-and-checkbox {
         position: relative;
-        align-items: center;
         gap: 0;
     }
 
@@ -2262,6 +2265,7 @@ button {
     .change-pay-method-set-button {
         width: 100%;
     }
+
     .points-buttons-container {
         display: flex;
         justify-content: space-between;
