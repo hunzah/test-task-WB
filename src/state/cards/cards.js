@@ -73,20 +73,20 @@ export const cards = {
             color: "Цвет: белый",
             size: "56",
             count: 0,
-            img: '../../assets/images/card-photo-2.png',
+            img: './assets/images/card-photo-2.png',
             isFavorite: false
         }, {
             id: "not-available-2",
             name: "Силиконовый чехол картхолдер (отверстия) для карт, прозрачный кейс бампер на Apple iPhone XR, MobiSafe",
             color: "Цвет: прозрачный",
             count: 0,
-            img: '../../assets/images/card-photo-1.png',
+            img: './assets/images/card-photo-1.png',
             isFavorite: false
         }, {
             id: "not-available-3",
             name: 'Карандаши цветные Faber-Castell "Замок", набор 24 цвета, заточенные, шестигранные, Faber-Castell',
             count: 0,
-            img: '../../assets/images/card-photo-3.png',
+            img: './assets/images/card-photo-3.png',
             isFavorite: false
         }
     ]
