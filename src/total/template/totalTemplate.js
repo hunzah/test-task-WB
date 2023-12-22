@@ -33,7 +33,7 @@ export function totalTemplate() {
                         <div class="total-delivery-point-receiver-container">
                             <span class="total-delivery-point-title-text">Доставка в пункт выдачи</span>
                             <button id="total-change-pick-up-point-button">
-                                <img src="../../../assets/icons/change-icon.svg" alt="edit-icon">
+                                <img src="./assets/icons/change-icon.svg" alt="edit-icon">
                             </button>
                         </div>
                         <div class="total-delivery-point-address-text-container">
@@ -44,7 +44,7 @@ export function totalTemplate() {
                         </div>
                     </div>
                     <div class="total-return-delivery-container">
-                        <img src="../../../assets/icons/price-shipping-green.svg" alt="price-shipping-icon">
+                        <img src="./assets/icons/price-shipping-green.svg" alt="price-shipping-icon">
                         <span class="return-delivery-text">Обратная доставка товаров на склад при отказе —
                             <span id="return-delivery-price-info-total" class="return-delivery-text-green">бесплатно</span>
                         </span>
@@ -55,7 +55,7 @@ export function totalTemplate() {
                         <div class="total-pay-card-header-container">
                             <span class="total-pay-title-text">Оплата картой</span>
                             <button class="delivery-method-header-button" id="total-change-pay-method-modal">
-                                <img src="../../../assets/icons/change-icon.svg" alt="change-icon">
+                                <img src="./assets/icons/change-icon.svg" alt="change-icon">
                             </button>
                         </div>
                         <div class="total-pay-card-info-container">
@@ -74,7 +74,7 @@ export function totalTemplate() {
                 <div class="total-order-button-container">
                     <button class="order-submit-button" id="order-submit-button">Заказать</button>
                     <div class="total-order-checkbox-container">
-                        <img src="../../../assets/icons/terms-checked.svg" alt="checked-icon"/>
+                        <img src="./assets/icons/terms-checked.svg" alt="checked-icon"/>
                         <span class="terms-text">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
                     </div>
                 </div>

@@ -30,7 +30,7 @@ export function productCardTemplate(product) {
                             <span class="pick-up-address-name-text">${product.address}</span>
                             <div class="address-name-info-container">
                                 <span class="pick-up-address-name-text-wb">${product.companyName}</span>
-                                <img class="info-icon" id="info-${product.id}" src="/assets/icons/card/icon-info.svg" alt="info-icon"/>
+                                <img class="info-icon" id="info-${product.id}" src="./assets/icons/card/icon-info.svg" alt="info-icon"/>
                             </div>
                         </div>
                     </div>
