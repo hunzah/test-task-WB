@@ -326,14 +326,14 @@ body.overlay-open {
 }
 
 .select-radio input[type="radio"]::before {
-    content: url('/assets/icons/select-radio-unchecked-icon-20.svg');
+    content: url('./assets/icons/select-radio-unchecked-icon-20.svg');
     background-size: contain;
     transform: scale(1);
     transition: 120ms transform ease-in-out;
 }
 
 .select-radio input[type="radio"]:checked::before {
-    content: url('/assets/icons/select-radio-checked-icon-20.svg');
+    content: url('./assets/icons/select-radio-checked-icon-20.svg');
     transform: scale(1);
     border-color: transparent;
 }

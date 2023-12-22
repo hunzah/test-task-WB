@@ -5,7 +5,7 @@ export function changePayMethodModalTemplate() {
         <div class="change-pay-method-container">
             <div class="pay-method-modal-title-container">
                 <span class="pay-method-modal-title">Способ оплаты</span>
-                <img id="close-change-pay-method-modal-button" class="close-modal-icon" src="../../../assets/icons/pay-method/close-icon.svg" alt="close-icon"/>
+                <img id="close-change-pay-method-modal-button" class="close-modal-icon" src="./assets/icons/pay-method/close-icon.svg" alt="close-icon"/>
             </div>
             <div class="modal-pay-cards-container">
                 ${cardInfo()}
