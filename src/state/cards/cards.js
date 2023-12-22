@@ -91,3 +91,8 @@ export const cards = {
         }
     ]
 }
+
+export function updateCardState(updatedState) {
+    cards.products = updatedState.products;
+    cards.notAvailableProducts = updatedState.notAvailableProducts;
+}

@@ -620,7 +620,13 @@ button {
 .pick-all-checkbox-container {
     display: flex;
     align-items: center;
-    gap: 11px;
+    gap: 8px;
+
+
+    font-size: 13px;
+
+    font-weight: 400;
+    line-height: 16px;
 }
 
 .checkbox[type='checkbox'] {
@@ -906,11 +912,21 @@ button {
     }
 }
 
-.trash-button:hover {
-    cursor: pointer;
+.trash-button {
 
-    .trash-icon path {
-        fill: var(--color-orange);
+    &:hover {
+        cursor: pointer;
+
+        .trash-icon path {
+            fill: var(--color-orange);
+        }
+    }
+    &:disabled {
+        cursor: default;
+        .trash-icon path {
+            fill: var(--color-light-black);
+
+        }
     }
 }
 

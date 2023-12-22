@@ -1,7 +1,8 @@
 import {changePayMethodModalTemplate} from "./changePayMethodTemplate.js";
 import {payMethod} from "../../state/pay-method/payMethod.js";
 import {payMethodTemplate} from "../../pay-method/template/payMethodTemplate.js";
-import {generatePaymentCardInfo} from "../../total/template/totalTemplate.js";
+import {renderPaymentCardInfo} from "../../total/template/totalTemplate.js";
+import {closeModal, openModal} from "../../tools/tools.js";
 
 document.addEventListener('DOMContentLoaded', function () {
     const paymentContainer = document.getElementById('payment-method-main');
@@ -15,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function () {
     modalContainer.innerHTML = modalTemplate;
     modalContainer.style.display = 'none';
 
-
-
     document.body.appendChild(overlay);
     document.body.appendChild(modalContainer);
 
@@ -28,22 +27,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let selectedCardIndex = null;
 
-
-
-    function openModal() {
-        overlay.style.display = 'block';
-        modalContainer.style.display = 'block';
-        document.body.classList.add('overlay-open');
-    }
-
-    function closeModal() {
-        overlay.style.display = 'none';
-        modalContainer.style.display = 'none';
-        document.body.classList.remove('overlay-open');
-    }
-    openModalButtonPayment.addEventListener('click', openModal);
-    openModalButtonTotal.addEventListener('click', openModal);
-    closeModalButton.addEventListener('click', closeModal);
+    openModalButtonPayment.addEventListener('click', () => openModal(overlay, modalContainer));
+    openModalButtonTotal.addEventListener('click', () => openModal(overlay, modalContainer));
+    closeModalButton.addEventListener('click', () => closeModal(overlay, modalContainer));
 
     radioButtons.forEach((radioButton, index) => {
         radioButton.addEventListener('change', function () {
@@ -55,9 +41,10 @@ document.addEventListener('DOMContentLoaded', function () {
         if (selectedCardIndex !== null) {
             payMethod.selectedCard = { ...payMethod.cards[selectedCardIndex] };
             paymentContainer.innerHTML = payMethodTemplate();
-            totalContainer.innerHTML = generatePaymentCardInfo();
+            totalContainer.innerHTML = renderPaymentCardInfo();
         }
-        closeModal()
+        closeModal(overlay, modalContainer)
     });
 });
+
 

@@ -1,5 +1,6 @@
 import {payMethod} from "../../state/pay-method/payMethod.js";
 import {total} from "../../state/total/total.js";
+import {deliveryMethod} from "../../state/delivery-method/deliveryMethod.js";
 
 export function totalTemplate() {
     return `
@@ -31,12 +32,12 @@ export function totalTemplate() {
                     <div class="total-delivery-point-container">
                         <div class="total-delivery-point-receiver-container">
                             <span class="total-delivery-point-title-text">Доставка в пункт выдачи</span>
-                            <button>
+                            <button id="total-change-pick-up-point-button">
                                 <img src="assets/icons/change-icon.svg" alt="edit-icon">
                             </button>
                         </div>
                         <div class="total-delivery-point-address-text-container">
-                            <span class="total-delivery-point-address-text">Бишкек, улица Ахматбека Суюмбаева, 12/1</span>
+                       ${renderPickUpPointInfo()}
                         </div>
                         <div class="total-delivery-date-text-container">
                             <span class="total-delivery-date-text">5–8 фев</span>
@@ -58,19 +59,20 @@ export function totalTemplate() {
                             </button>
                         </div>
                         <div class="total-pay-card-info-container">
-                            ${generatePaymentCardInfo()}
+                            ${renderPaymentCardInfo()}
                             </div>
                     </div>
                     <div class="total-pay-card-immediately-payment-container">
                         <div class="pick-all-checkbox-container">
                             <input type="checkbox" class="checkbox" id="total-checkbox">
                             <label for="total-checkbox" class="custom-checkbox-label"></label>
+                            <span>Списать оплату сразу</span>
                         </div>
-                        <span class="immediately-payment-text">Спишем оплату с карты при получении</span>
+                        <span class="immediately-payment-text ">Спишем оплату с карты при получении</span>
                     </div>
                 </div>
                 <div class="total-order-button-container">
-                    <button class="order-submit-button">Заказать</button>
+                    <button class="order-submit-button" id="order-submit-button">Заказать</button>
                     <div class="total-order-checkbox-container">
                         <img src="assets/icons/terms-checked.svg" alt="checked-icon"/>
                         <span class="terms-text">Соглашаюсь с правилами пользования торговой площадкой и возврата</span>
@@ -81,9 +83,14 @@ export function totalTemplate() {
     `
 }
 
-export function generatePaymentCardInfo() {
+export function renderPaymentCardInfo() {
     return `
             <img src="${payMethod.selectedCard.img}" alt="bank-card">
             <span class="total-pay-card-numbers">${payMethod.selectedCard.number}</span>
+    `;
+}
+export function renderPickUpPointInfo() {
+    return `
+        <span class="total-delivery-point-address-text">${deliveryMethod.selectedPickUpPoint.address}</span>
     `;
 }

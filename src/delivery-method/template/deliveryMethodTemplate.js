@@ -5,7 +5,9 @@ export function deliveryMethodTemplate() {
         <div class="delivery-method-info">
             <div class="delivery-pick-up-point">
                 <span class="delivery-pick-up-date-point-text">Пункт выдачи</span>
-                ${renderMobilePickUpPoint()}
+                <div class="delivery-pick-up-point-expanded-mobile">
+                    ${renderMobilePickUpPoint()}
+                </div>
             </div>
             <div class="delivery-cost">
                 <span class="delivery-pick-up-date-point-text">Стоимость доставки</span>
@@ -83,9 +85,17 @@ export function deliveryMethodTemplate() {
     `
 }
 
-function renderMobilePickUpPoint() {
+export function renderMobilePickUpPoint() {
     return `
-        <div class="delivery-pick-up-point-expanded-mobile">
+            <span class="delivery-pick-up-date-point-expanded-text">${deliveryMethod.selectedPickUpPoint.address}</span>
+            ${renderPickUpPointRating()}
+    `;
+}
+
+
+export function renderExpandedPickUpPoint() {
+    return `
+        <div class="delivery-pick-up-point-expanded">
             <span class="delivery-pick-up-date-point-expanded-text">${deliveryMethod.selectedPickUpPoint.address}</span>
             ${renderPickUpPointRating()}
         </div>
@@ -94,27 +104,12 @@ function renderMobilePickUpPoint() {
 
 function renderPickUpPointRating() {
     return `
-        <div class="delivery-pick-up-point-rating-container">
+        <div class="delivery-pick-up-point-rating-container">            
             <div class="delivery-pick-up-point-rating-stars">
                 <img src="assets/icons/rating-star.svg" alt="rating-star"/>
                 <span class="delivery-pick-up-point-rating-text">${deliveryMethod.selectedPickUpPoint.stars}</span>
             </div>
             <span class="delivery-pick-up-point-rating-text">Ежедневно с 10 до 21</span>
         </div>
-    `;
-}
-
-function renderExpandedPickUpPoint() {
-    return `
-        <div class="delivery-pick-up-point-expanded">
-            ${renderExpandedPickUpPointText()}
-            ${renderPickUpPointRating()}
-        </div>
-    `;
-}
-
-function renderExpandedPickUpPointText() {
-    return `
-        <span class="delivery-pick-up-date-point-expanded-text">${deliveryMethod.selectedPickUpPoint.address}</span>
     `;
 }
