@@ -348,6 +348,7 @@ body {
     color: var(--color-black);
 }
 
+.delivery-method-header-button
 button {
     padding: 0;
     margin: 0;
@@ -1015,7 +1016,6 @@ button {
 
 /*DELIVERY*/
 
-
 .delivery-container {
     display: flex;
     padding: 16px 24px 24px 24px;
@@ -1486,7 +1486,6 @@ button {
 }
 
 .total-info-price-text {
-
     font-size: 20px;
     font-weight: 700;
     line-height: 28px;
@@ -1545,6 +1544,10 @@ button {
     font-size: 16px;
     font-weight: 700;
     line-height: 24px;
+}
+
+.total-change-pick-up-point-button:hover {
+    cursor: pointer;
 }
 
 .total-delivery-point-address-text-container {
@@ -2239,8 +2242,6 @@ button {
         align-self: stretch;
 
         background: var(--color-white);
-
-
     }
 
     .navbar-mobile-basket-icon-container {

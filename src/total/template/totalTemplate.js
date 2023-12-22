@@ -32,7 +32,7 @@ export function totalTemplate() {
                     <div class="total-delivery-point-container">
                         <div class="total-delivery-point-receiver-container">
                             <span class="total-delivery-point-title-text">Доставка в пункт выдачи</span>
-                            <button id="total-change-pick-up-point-button">
+                            <button class="total-change-pick-up-point-button" id="total-change-pick-up-point-button">
                                 <img src="./assets/icons/change-icon.svg" alt="edit-icon">
                             </button>
                         </div>
