@@ -2146,6 +2146,14 @@ button {
         align-self: stretch;
     }
 
+    .receiver-inputs-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        width: 100%;
+    }
+
     .receiver-name-lastname-inputs-container, .receiver-email-phone-inputs-container {
         flex-direction: column;
         justify-content: center;
