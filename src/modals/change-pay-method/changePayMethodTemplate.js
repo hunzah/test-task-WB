@@ -19,11 +19,10 @@ export function changePayMethodModalTemplate() {
 
 function cardInfo() {
     const selectedCardIndex = payMethod.cards.findIndex(card => card.number === payMethod.selectedCard.number);
-    console.log(selectedCardIndex)
     return payMethod.cards.map((card, index) => `
         <div class="modal-pay-card">
             <label class="select-radio select-card-radio">
-                <input type="radio" name="paymentCard" value="${index}" ${0 === index ? 'checked' : ''} />
+                <input type="radio" name="paymentCard" value="${index}" ${selectedCardIndex === index ? 'checked' : ''} />
             </label>
             <div>
                 <img src="${card.img}" alt="close-icon"/>
