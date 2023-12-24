@@ -1,6 +1,4 @@
 const validateInput = (input, error, validationRegex, errorMessage) => {
-
-
     let isNameValid = true;
     let isBlur = false;
 
