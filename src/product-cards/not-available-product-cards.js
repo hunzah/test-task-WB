@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', function () {
             trashButton.addEventListener('click', () => {
                 removeNotAvailableProduct(product, listItem, header, cards);
             });
+
+            //add in favorite logic
+            const likeButton = document.getElementById(`${product.id}-like-button`);
+            likeButton.addEventListener('click', () => {
+                product.isFavorite ? product.isFavorite = false : product.isFavorite = true
+                if (product.isFavorite) {
+                    likeButton.classList.add('like-button-favorite')
+                } else {
+                    likeButton.classList.remove('like-button-favorite')
+                }
+            });
         });
     }
 });

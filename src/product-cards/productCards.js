@@ -7,7 +7,6 @@ import {discountInfoTooltip} from "../tooltips/discountInfoTooltip.js";
 import {updateButtonText} from "../total/total.js";
 
 
-
 document.addEventListener('DOMContentLoaded', function () {
     const productList = document.getElementById('cards-list');
     const header = document.querySelector('.accordion-header');
@@ -30,18 +29,30 @@ document.addEventListener('DOMContentLoaded', function () {
 
             productList.appendChild(listItem);
             const checkbox = document.getElementById(`card-checkbox-${product.id}`);
+
             //choose product logic
             checkbox.addEventListener('change', function () {
                 calculatePrice(product, this.checked, total);
                 updateSelectAllCheckboxState()
                 updateButtonText(checkboxTotal, orderButton, immediatelyPaymentContainer)
             })
+
             //delete cards logic
             const trashButton = document.getElementById(`${product.id}-count-button`);
             trashButton.addEventListener('click', () => {
                 removeProduct(product, listItem, header, total, checkbox.checked);
                 updateButtonText(checkboxTotal, orderButton, immediatelyPaymentContainer)
+            });
 
+            //add in favorite logic
+            const likeButton = document.getElementById(`${product.id}-like-button`);
+            likeButton.addEventListener('click', () => {
+                product.isFavorite ? product.isFavorite = false : product.isFavorite = true
+                if (product.isFavorite) {
+                    likeButton.classList.add('like-button-favorite')
+                } else {
+                    likeButton.classList.remove('like-button-favorite')
+                }
             });
 
             // main checkbox
@@ -53,6 +64,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     updateButtonText(checkboxTotal, orderButton, immediatelyPaymentContainer)
                 });
             });
+
             //tooltip
             cardInfoTooltip(product)
             discountInfoTooltip(product)

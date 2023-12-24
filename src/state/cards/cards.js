@@ -21,6 +21,7 @@ export const cards = {
             buyerDiscount: "10%",
             discountValue: '419',
             buyerDiscountValue: '109',
+            isFavorite: false
         },
         {
             id: 2,
@@ -43,6 +44,7 @@ export const cards = {
             buyerDiscount: "4.4%",
             discountValue: '111 034',
             buyerDiscountValue: '89 013',
+            isFavorite: false
         },
         {
             id: 3,
@@ -64,6 +66,7 @@ export const cards = {
             buyerDiscount: "10%",
             discountValue: '313',
             buyerDiscountValue: '96',
+            isFavorite: true
         },
     ],
     notAvailableProducts: [

@@ -908,11 +908,14 @@ button {
 
 .like-button {
     cursor: pointer;
+}
 
-    .like-icon:hover {
+.like-button-favorite {
+    .like-icon {
         fill: var(--color-pink);
     }
 }
+
 
 .trash-button {
 
