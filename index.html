@@ -106,19 +106,19 @@
                                 <span class="receiver-method-header-text">Получатель</span>
                             </div>
                         </div>
-                        <div class="receiver-inputs-container">
+                        <div class="form">
                             <div class="receiver-name-lastname-inputs-container">
                                 <div class="input-and-error-container">
                                     <label class="receiver-name-label">
                                         <input class="receiver-name-input" placeholder="Имя"/>
                                     </label>
-                                    <span class="receiver-input-error"></span>
+                                    <span class="receiver-input-error receiver-name-input-error"></span>
                                 </div>
                                 <div class="input-and-error-container">
                                     <label class="receiver-lastname-label">
                                         <input class="receiver-lastname-input" placeholder="Фамилия">
                                     </label>
-                                    <span class="receiver-input-error"></span>
+                                    <span class="receiver-input-error receiver-lastname-input-error"></span>
                                 </div>
                             </div>
                             <div class="receiver-email-phone-inputs-container">
@@ -126,17 +126,17 @@
                                     <label class="receiver-email-label">
                                         <input class="receiver-email-input" placeholder="Почта"/>
                                     </label>
-                                    <span class="receiver-input-error"></span>
+                                    <span class="receiver-input-error receiver-email-input-error"></span>
                                 </div>
                                 <div class="input-and-error-container">
                                     <label class="receiver-phone-label">
                                         <input class="receiver-phone-input" placeholder="Телефон"/>
                                     </label>
-                                    <span class="receiver-input-error"></span>
+                                    <span class="receiver-input-error receiver-phone-input-error"></span>
                                 </div>
                                 <div class="input-and-error-container">
                                     <label class="receiver-INN-label">
-                                        <input class="receiver-INN-input" placeholder="ИНН"/>
+                                        <input class="receiver-INN-input receiver-INN-input-error" placeholder="ИНН"/>
                                     </label>
                                     <span class="receiver-input-text">Для таможенного оформления</span>
                                 </div>
@@ -167,5 +167,6 @@
     <img src="assets/icons/mobile/my-profile-icon-mobile.svg" alt="add-favorites"/>
 </div>
 <script type="module" src="./main.js"></script>
+<script type="module" src="./src/form/form.js"></script>
 </body>
 </html>

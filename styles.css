@@ -348,7 +348,6 @@ body {
     color: var(--color-black);
 }
 
-.delivery-method-header-button
 button {
     padding: 0;
     margin: 0;
@@ -1356,7 +1355,7 @@ button {
     align-self: stretch;
 }
 
-.receiver-inputs-container {
+.form {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -2139,7 +2138,7 @@ button {
         gap: 8px;
     }
 
-    .receiver-inputs-container {
+    .form {
         gap: 0;
         align-self: stretch;
     }
