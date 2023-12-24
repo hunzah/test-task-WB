@@ -7,5 +7,5 @@ import './src/pay-method/payMethod.js';
 import './src/delivery-method/deliveryMethod.js';
 import './src/modals/change-pay-method/changePayMethod.js';
 import './src/modals/change-pick-up-address/changePickUpPoint.js';
-import './src/form/form.js'
+import './src/tap-bar-mobile/tapBar.js'
 

@@ -2139,7 +2139,7 @@ button {
     }
 
     .form {
-        gap: 0;
+        gap: 16px;
         align-self: stretch;
     }
 

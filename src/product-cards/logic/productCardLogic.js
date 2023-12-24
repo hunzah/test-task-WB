@@ -2,6 +2,7 @@ import {updateTotalState,} from "../../state/total/updateTotal.js";
 import {cards, updateCardState} from "../../state/cards/cards.js";
 import {formatNumber, parseAndSum, stringToNumber} from "../../tools/tools.js";
 import {headerTemplate} from "../../header/template/headerTemplate.js";
+import {tapBarTemplate} from "../../tap-bar-mobile/template/tapBarTemplate.js";
 
 
 export function removeProduct(product, listItem, header, total, isChecked) {
@@ -30,7 +31,9 @@ export function removeProduct(product, listItem, header, total, isChecked) {
         }
     }
     const renderHeader = document.querySelector('.header-basket-icon-container');
+    const renderTapBar = document.querySelector('.navbar-mobile-basket-icon-container');
     renderHeader.innerHTML = headerTemplate()
+    renderTapBar.innerHTML = tapBarTemplate()
     listItem.remove();
     updateSelectAllCheckboxState()
 }
