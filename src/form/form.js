@@ -42,7 +42,7 @@ validateInput(lastNameInput, lastNameError, /^[a-zA-Zа-яА-Я]+$/, 'Фамил
 
 const phoneInput = document.querySelector('.receiver-phone-input');
 const phoneError = document.querySelector('.receiver-phone-input-error');
-validateInput(phoneInput, phoneError, /^\+?[0-9]+$/, 'Введите корректный номер');
+validateInput(phoneInput, phoneError, /^\+\d{9,12}$/, 'Введите корректный номер');
 
 const mailInput = document.querySelector('.receiver-email-input');
 const mailError = document.querySelector('.receiver-email-input-error');
